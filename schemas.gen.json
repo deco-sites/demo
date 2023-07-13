@@ -7401,6 +7401,46 @@
       "required": [],
       "title": "Props"
     },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@ButtonType": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Default",
+              "default": "Default"
+            },
+            {
+              "type": "string",
+              "const": "Primary",
+              "default": "Primary"
+            },
+            {
+              "type": "string",
+              "const": "Secondary",
+              "default": "Secondary"
+            },
+            {
+              "type": "string",
+              "const": "Tertiary",
+              "default": "Tertiary"
+            }
+          ],
+          "type": "string",
+          "title": "Color"
+        },
+        "outline": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Outline"
+        }
+      },
+      "required": [],
+      "title": "ButtonType"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -7903,6 +7943,27 @@
       "required": [],
       "title": "deco-sites/demo/components/ui/CategoryBanner.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        }
+      },
+      "required": [],
+      "title": "Content"
+    },
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Category": {
       "type": "object",
       "properties": {
@@ -7955,28 +8016,388 @@
       },
       "title": "Category[]"
     },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout": {
+      "type": "object",
+      "properties": {
+        "sectionWidth": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Container",
+              "default": "Container"
+            },
+            {
+              "type": "string",
+              "const": "Full",
+              "default": "Full"
+            }
+          ],
+          "type": "string",
+          "title": "Section Width"
+        },
+        "contentWidth": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Container",
+              "default": "Container"
+            },
+            {
+              "type": "string",
+              "const": "Two Thirds",
+              "default": "Two Thirds"
+            },
+            {
+              "type": "string",
+              "const": "Full",
+              "default": "Full"
+            }
+          ],
+          "type": "string",
+          "title": "Content Width"
+        }
+      },
+      "required": [],
+      "title": "Layout"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Section": {
+      "type": "object",
+      "properties": {
+        "bgColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Transparent",
+              "default": "Transparent"
+            },
+            {
+              "type": "string",
+              "const": "Backdrop opacity",
+              "default": "Backdrop opacity"
+            },
+            {
+              "type": "string",
+              "const": "Primary",
+              "default": "Primary"
+            },
+            {
+              "type": "string",
+              "const": "Secondary",
+              "default": "Secondary"
+            },
+            {
+              "type": "string",
+              "const": "Tertiary",
+              "default": "Tertiary"
+            },
+            {
+              "type": "string",
+              "const": "Base",
+              "default": "Base"
+            },
+            {
+              "type": "string",
+              "const": "Base inverted",
+              "default": "Base inverted"
+            }
+          ],
+          "type": "string",
+          "title": "Bg Color"
+        },
+        "bgImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Bg Image"
+        }
+      },
+      "required": [],
+      "title": "Section"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Style": {
+      "type": "object",
+      "properties": {
+        "textColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Auto",
+              "default": "Auto"
+            },
+            {
+              "type": "string",
+              "const": "Primary",
+              "default": "Primary"
+            },
+            {
+              "type": "string",
+              "const": "Secondary",
+              "default": "Secondary"
+            },
+            {
+              "type": "string",
+              "const": "Tertiary",
+              "default": "Tertiary"
+            },
+            {
+              "type": "string",
+              "const": "Base",
+              "default": "Base"
+            },
+            {
+              "type": "string",
+              "const": "Base inverted",
+              "default": "Base inverted"
+            }
+          ],
+          "type": "string",
+          "title": "Text Color"
+        },
+        "fontSize": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Extra Large",
+              "default": "Extra Large"
+            },
+            {
+              "type": "string",
+              "const": "Large",
+              "default": "Large"
+            },
+            {
+              "type": "string",
+              "const": "Medium",
+              "default": "Medium"
+            }
+          ],
+          "type": "string",
+          "title": "Font Size"
+        },
+        "fontWeight": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Semibold",
+              "default": "Semibold"
+            },
+            {
+              "type": "string",
+              "const": "Normal",
+              "default": "Normal"
+            },
+            {
+              "type": "string",
+              "const": "Light",
+              "default": "Light"
+            }
+          ],
+          "type": "string",
+          "title": "Font Weight"
+        },
+        "textTransform": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Normal",
+              "default": "Normal"
+            },
+            {
+              "type": "string",
+              "const": "Uppercase",
+              "default": "Uppercase"
+            },
+            {
+              "type": "string",
+              "const": "Lowercase",
+              "default": "Lowercase"
+            },
+            {
+              "type": "string",
+              "const": "Capitalize",
+              "default": "Capitalize"
+            }
+          ],
+          "type": "string",
+          "title": "Text Transform"
+        },
+        "line": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "None",
+              "default": "None"
+            },
+            {
+              "type": "string",
+              "const": "Bottom",
+              "default": "Bottom"
+            },
+            {
+              "type": "string",
+              "const": "Middle",
+              "default": "Middle"
+            }
+          ],
+          "type": "string",
+          "title": "Line"
+        },
+        "alignment": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Center",
+              "default": "Center"
+            },
+            {
+              "type": "string",
+              "const": "Left",
+              "default": "Left"
+            }
+          ],
+          "type": "string",
+          "title": "Alignment"
+        }
+      },
+      "required": [],
+      "title": "Style"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle": {
+      "type": "object",
+      "properties": {
+        "section": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Section",
+          "title": "Section"
+        },
+        "content": {
+          "type": "object",
+          "properties": {
+            "alignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Center",
+                  "default": "Center"
+                },
+                {
+                  "type": "string",
+                  "const": "Left",
+                  "default": "Left"
+                },
+                {
+                  "type": "string",
+                  "const": "Side to side top",
+                  "default": "Side to side top"
+                },
+                {
+                  "type": "string",
+                  "const": "Side to side middle",
+                  "default": "Side to side middle"
+                }
+              ],
+              "type": "string",
+              "title": "Alignment"
+            },
+            "bgColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Transparent",
+                  "default": "Transparent"
+                },
+                {
+                  "type": "string",
+                  "const": "Backdrop opacity",
+                  "default": "Backdrop opacity"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Bg Color"
+            },
+            "bgImage": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Bg Image"
+            },
+            "textColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Auto",
+                  "default": "Auto"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Text Color"
+            }
+          },
+          "required": [],
+          "title": "Content"
+        },
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Style",
+          "title": "Header"
+        },
+        "button": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@ButtonType",
+          "title": "Button"
+        }
+      },
+      "required": [],
+      "title": "ExtendedStyle"
+    },
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Props": {
       "type": "object",
       "properties": {
         "header": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Title"
-            },
-            "description": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Description"
-            }
-          },
-          "required": [],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
           "title": "Header"
         },
         "list": {
@@ -7984,66 +8405,91 @@
           "title": "List"
         },
         "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
+          "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
+        },
+        "cardStyle": {
           "type": "object",
           "properties": {
-            "headerAlignment": {
+            "textPosition": {
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "center",
-                  "default": "center"
+                  "const": "Top",
+                  "default": "Top"
                 },
                 {
                   "type": "string",
-                  "const": "left",
-                  "default": "left"
+                  "const": "Bottom",
+                  "default": "Bottom"
                 }
               ],
               "type": "string",
-              "title": "Header Alignment"
+              "title": "Text Position"
             },
-            "categoryCard": {
-              "type": "object",
-              "properties": {
-                "textPosition": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "top",
-                      "default": "top"
-                    },
-                    {
-                      "type": "string",
-                      "const": "bottom",
-                      "default": "bottom"
-                    }
-                  ],
+            "textAlignment": {
+              "anyOf": [
+                {
                   "type": "string",
-                  "title": "Text Position"
+                  "const": "Center",
+                  "default": "Center"
                 },
-                "textAlignment": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "center",
-                      "default": "center"
-                    },
-                    {
-                      "type": "string",
-                      "const": "left",
-                      "default": "left"
-                    }
-                  ],
+                {
                   "type": "string",
-                  "title": "Text Alignment"
+                  "const": "Left",
+                  "default": "Left"
                 }
-              },
-              "required": [],
-              "title": "Category Card"
+              ],
+              "type": "string",
+              "title": "Text Alignment"
             }
           },
           "required": [],
-          "title": "Layout"
+          "title": "Card Style"
+        },
+        "sliderStyle": {
+          "type": "object",
+          "properties": {
+            "controlsColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Default",
+                  "default": "Default"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                }
+              ],
+              "type": "string",
+              "title": "Controls Color"
+            },
+            "controlsOutline": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Controls Outline"
+            }
+          },
+          "required": [],
+          "title": "Slider Style"
         }
       },
       "required": [],
@@ -8052,19 +8498,9 @@
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "benefits": {
           "type": "array",
@@ -8295,48 +8731,83 @@
           "title": "Benefits"
         },
         "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
+          "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
+        },
+        "itemsStyle": {
           "type": "object",
           "properties": {
-            "variation": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Simple",
-                  "default": "Simple"
-                },
-                {
-                  "type": "string",
-                  "const": "With border",
-                  "default": "With border"
-                },
-                {
-                  "type": "string",
-                  "const": "Color reverse",
-                  "default": "Color reverse"
-                }
+            "showDivider": {
+              "type": [
+                "boolean",
+                "null"
               ],
-              "type": "string",
-              "title": "Variation"
+              "title": "Show Divider"
             },
-            "headerAlignment": {
+            "iconPosition": {
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "center",
-                  "default": "center"
+                  "const": "Top",
+                  "default": "Top"
                 },
                 {
                   "type": "string",
-                  "const": "left",
-                  "default": "left"
+                  "const": "Left",
+                  "default": "Left"
                 }
               ],
               "type": "string",
-              "title": "Header Alignment"
+              "title": "Icon Position"
+            },
+            "bgColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Transparent",
+                  "default": "Transparent"
+                },
+                {
+                  "type": "string",
+                  "const": "Backdrop opacity",
+                  "default": "Backdrop opacity"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Bg Color"
             }
           },
           "required": [],
-          "title": "Layout"
+          "title": "Items Style"
         }
       },
       "required": [],
@@ -8383,7 +8854,6 @@
             "string",
             "null"
           ],
-          "format": "html",
           "title": "Description"
         },
         "link": {
@@ -8408,22 +8878,135 @@
       "required": [],
       "title": "Contact"
     },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@Style": {
+      "type": "object",
+      "properties": {
+        "section": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Section",
+          "title": "Section"
+        },
+        "content": {
+          "type": "object",
+          "properties": {
+            "alignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Center",
+                  "default": "Center"
+                },
+                {
+                  "type": "string",
+                  "const": "Left",
+                  "default": "Left"
+                }
+              ],
+              "type": "string",
+              "title": "Alignment"
+            },
+            "bgColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Transparent",
+                  "default": "Transparent"
+                },
+                {
+                  "type": "string",
+                  "const": "Backdrop opacity",
+                  "default": "Backdrop opacity"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Bg Color"
+            },
+            "bgImage": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Bg Image"
+            },
+            "textColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Auto",
+                  "default": "Auto"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Text Color"
+            }
+          },
+          "required": [],
+          "title": "Content"
+        },
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Style",
+          "title": "Header"
+        },
+        "button": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@ButtonType",
+          "title": "Button"
+        }
+      },
+      "required": [],
+      "title": "Style"
+    },
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "questions": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question[]",
@@ -8434,48 +9017,35 @@
           "title": "Contact"
         },
         "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
+          "title": "Layout"
+        },
+        "itemsLayout": {
           "type": "object",
           "properties": {
             "variation": {
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "Compact",
-                  "default": "Compact"
+                  "const": "Rows",
+                  "default": "Rows"
                 },
                 {
                   "type": "string",
-                  "const": "Full",
-                  "default": "Full"
-                },
-                {
-                  "type": "string",
-                  "const": "Side to side",
-                  "default": "Side to side"
+                  "const": "Cols",
+                  "default": "Cols"
                 }
               ],
               "type": "string",
               "title": "Variation"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
             }
           },
           "required": [],
-          "title": "Layout"
+          "title": "Items Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@Style",
+          "title": "Style"
         }
       },
       "required": [],
@@ -8509,46 +9079,21 @@
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "images": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Image[]",
           "title": "Images"
         },
         "layout": {
-          "type": "object",
-          "properties": {
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            }
-          },
-          "required": [],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
           "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
         }
       },
       "required": [],
@@ -8628,25 +9173,23 @@
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "testimonials": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Testimonial[]",
           "title": "Testimonials"
         },
         "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
+          "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
+        },
+        "itemsLayout": {
           "type": "object",
           "properties": {
             "variation": {
@@ -8664,35 +9207,54 @@
               ],
               "type": "string",
               "title": "Variation"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
             }
           },
           "required": [],
-          "title": "Layout"
+          "title": "Items Layout"
+        },
+        "sliderStyle": {
+          "type": "object",
+          "properties": {
+            "controlsColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Default",
+                  "default": "Default"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                }
+              ],
+              "type": "string",
+              "title": "Controls Color"
+            },
+            "controlsOutline": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Controls Outline"
+            }
+          },
+          "required": [],
+          "title": "Slider Style"
         }
       },
       "required": [],
       "title": "deco-sites/demo/sections/Content/Testimonials.tsx@Props"
-    },
-    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
     },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@NewsletterForm": {
       "type": "object",
@@ -8915,40 +9477,9 @@
       "required": [],
       "title": "RegionOptions"
     },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Layout": {
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@LayoutOptions": {
       "type": "object",
       "properties": {
-        "backgroundColor": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Primary",
-              "default": "Primary"
-            },
-            {
-              "type": "string",
-              "const": "Secondary",
-              "default": "Secondary"
-            },
-            {
-              "type": "string",
-              "const": "Accent",
-              "default": "Accent"
-            },
-            {
-              "type": "string",
-              "const": "Base 100",
-              "default": "Base 100"
-            },
-            {
-              "type": "string",
-              "const": "Base 100 inverted",
-              "default": "Base 100 inverted"
-            }
-          ],
-          "type": "string",
-          "title": "Background Color"
-        },
         "variation": {
           "anyOf": [
             {
@@ -9052,7 +9583,110 @@
         }
       },
       "required": [],
-      "title": "Layout"
+      "title": "LayoutOptions"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2ltcGxlQ29udGFpbmVyLnRzeA==@Style": {
+      "type": "object",
+      "properties": {
+        "section": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Section",
+          "title": "Section"
+        },
+        "content": {
+          "type": "object",
+          "properties": {
+            "bgColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Transparent",
+                  "default": "Transparent"
+                },
+                {
+                  "type": "string",
+                  "const": "Backdrop opacity",
+                  "default": "Backdrop opacity"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Bg Color"
+            },
+            "bgImage": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Bg Image"
+            },
+            "textColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Auto",
+                  "default": "Auto"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Text Color"
+            }
+          },
+          "required": [],
+          "title": "Content"
+        },
+        "button": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@ButtonType",
+          "title": "Button"
+        }
+      },
+      "required": [],
+      "title": "Style"
     },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props": {
       "type": "object",
@@ -9061,7 +9695,7 @@
           "type": "object",
           "properties": {
             "image": {
-              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
               "title": "Image"
             },
             "description": {
@@ -9173,8 +9807,16 @@
           "title": "Back To The Top"
         },
         "layout": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Layout",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
           "title": "Layout"
+        },
+        "layoutOptions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@LayoutOptions",
+          "title": "Layout Options"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2ltcGxlQ29udGFpbmVyLnRzeA==@Style",
+          "title": "Style"
         }
       },
       "required": [],
@@ -9353,12 +9995,10 @@
         },
         "alt": {
           "type": "string",
-          "description": "Image alt text",
           "title": "Alt"
         },
         "href": {
           "type": "string",
-          "description": "When you click you go to",
           "title": "Href"
         }
       },
@@ -9377,181 +10017,205 @@
       },
       "title": "Banner[]"
     },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "anyOf": [
+            {
+              "type": "number",
+              "const": 1,
+              "default": 1
+            },
+            {
+              "type": "number",
+              "const": 2,
+              "default": 2
+            }
+          ],
+          "type": "number",
+          "default": "2",
+          "title": "Mobile"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+              "type": "number",
+              "const": 1,
+              "default": 1
+            },
+            {
+              "type": "number",
+              "const": 2,
+              "default": 2
+            },
+            {
+              "type": "number",
+              "const": 4,
+              "default": 4
+            },
+            {
+              "type": "number",
+              "const": 6,
+              "default": 6
+            },
+            {
+              "type": "number",
+              "const": 8,
+              "default": 8
+            }
+          ],
+          "type": "number",
+          "default": "4",
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Items"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Border": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none",
+              "default": "none"
+            },
+            {
+              "type": "string",
+              "const": "sm",
+              "default": "sm"
+            },
+            {
+              "type": "string",
+              "const": "md",
+              "default": "md"
+            },
+            {
+              "type": "string",
+              "const": "lg",
+              "default": "lg"
+            },
+            {
+              "type": "string",
+              "const": "xl",
+              "default": "xl"
+            },
+            {
+              "type": "string",
+              "const": "2xl",
+              "default": "2xl"
+            },
+            {
+              "type": "string",
+              "const": "3xl",
+              "default": "3xl"
+            },
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Mobile"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none",
+              "default": "none"
+            },
+            {
+              "type": "string",
+              "const": "sm",
+              "default": "sm"
+            },
+            {
+              "type": "string",
+              "const": "md",
+              "default": "md"
+            },
+            {
+              "type": "string",
+              "const": "lg",
+              "default": "lg"
+            },
+            {
+              "type": "string",
+              "const": "xl",
+              "default": "xl"
+            },
+            {
+              "type": "string",
+              "const": "2xl",
+              "default": "2xl"
+            },
+            {
+              "type": "string",
+              "const": "3xl",
+              "default": "3xl"
+            },
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Border"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@ItemsLayout": {
+      "type": "object",
+      "properties": {
+        "itemsPerLine": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items",
+          "description": "Default is 2 for mobile and all for desktop",
+          "title": "Items Per Line"
+        },
+        "borderRadius": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Border",
+          "description": "Item's border radius",
+          "title": "Border Radius"
+        }
+      },
+      "required": [],
+      "title": "ItemsLayout"
+    },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "itemsPerLine": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "number",
-                  "const": 1,
-                  "default": 1
-                },
-                {
-                  "type": "number",
-                  "const": 2,
-                  "default": 2
-                }
-              ],
-              "type": "number",
-              "title": "Mobile"
-            },
-            "desktop": {
-              "anyOf": [
-                {
-                  "type": "number",
-                  "const": 1,
-                  "default": 1
-                },
-                {
-                  "type": "number",
-                  "const": 2,
-                  "default": 2
-                },
-                {
-                  "type": "number",
-                  "const": 4,
-                  "default": 4
-                },
-                {
-                  "type": "number",
-                  "const": 6,
-                  "default": 6
-                },
-                {
-                  "type": "number",
-                  "const": 8,
-                  "default": 8
-                }
-              ],
-              "type": "number",
-              "title": "Desktop"
-            }
-          },
-          "required": [],
-          "title": "Items Per Line",
-          "description": "Default is 2 for mobile and all for desktop"
-        },
-        "borderRadius": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "none",
-                  "default": "none"
-                },
-                {
-                  "type": "string",
-                  "const": "sm",
-                  "default": "sm"
-                },
-                {
-                  "type": "string",
-                  "const": "md",
-                  "default": "md"
-                },
-                {
-                  "type": "string",
-                  "const": "lg",
-                  "default": "lg"
-                },
-                {
-                  "type": "string",
-                  "const": "xl",
-                  "default": "xl"
-                },
-                {
-                  "type": "string",
-                  "const": "2xl",
-                  "default": "2xl"
-                },
-                {
-                  "type": "string",
-                  "const": "3xl",
-                  "default": "3xl"
-                },
-                {
-                  "type": "string",
-                  "const": "full",
-                  "default": "full"
-                }
-              ],
-              "type": "string",
-              "title": "Mobile"
-            },
-            "desktop": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "none",
-                  "default": "none"
-                },
-                {
-                  "type": "string",
-                  "const": "sm",
-                  "default": "sm"
-                },
-                {
-                  "type": "string",
-                  "const": "md",
-                  "default": "md"
-                },
-                {
-                  "type": "string",
-                  "const": "lg",
-                  "default": "lg"
-                },
-                {
-                  "type": "string",
-                  "const": "xl",
-                  "default": "xl"
-                },
-                {
-                  "type": "string",
-                  "const": "2xl",
-                  "default": "2xl"
-                },
-                {
-                  "type": "string",
-                  "const": "3xl",
-                  "default": "3xl"
-                },
-                {
-                  "type": "string",
-                  "const": "full",
-                  "default": "full"
-                }
-              ],
-              "type": "string",
-              "title": "Desktop"
-            }
-          },
-          "required": [],
-          "title": "Border Radius",
-          "description": "Item's border radius in px"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "banners": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner[]",
           "title": "Banners"
+        },
+        "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
+          "title": "Layout"
+        },
+        "itemsLayout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@ItemsLayout",
+          "title": "Items Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
         }
       },
-      "required": [
-        "itemsPerLine",
-        "borderRadius",
-        "banners"
-      ],
+      "required": [],
       "title": "deco-sites/demo/components/ui/BannerGrid.tsx@Props"
     },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
@@ -9656,12 +10320,10 @@
         },
         "alt": {
           "type": "string",
-          "description": "Image alt text",
           "title": "Alt"
         },
         "href": {
           "type": "string",
-          "description": "Adicione um link",
           "title": "Href"
         }
       },
@@ -9680,22 +10342,157 @@
       },
       "title": "Banner[]"
     },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Border": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none",
+              "default": "none"
+            },
+            {
+              "type": "string",
+              "const": "sm",
+              "default": "sm"
+            },
+            {
+              "type": "string",
+              "const": "md",
+              "default": "md"
+            },
+            {
+              "type": "string",
+              "const": "lg",
+              "default": "lg"
+            },
+            {
+              "type": "string",
+              "const": "xl",
+              "default": "xl"
+            },
+            {
+              "type": "string",
+              "const": "2xl",
+              "default": "2xl"
+            },
+            {
+              "type": "string",
+              "const": "3xl",
+              "default": "3xl"
+            },
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Mobile"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none",
+              "default": "none"
+            },
+            {
+              "type": "string",
+              "const": "sm",
+              "default": "sm"
+            },
+            {
+              "type": "string",
+              "const": "md",
+              "default": "md"
+            },
+            {
+              "type": "string",
+              "const": "lg",
+              "default": "lg"
+            },
+            {
+              "type": "string",
+              "const": "xl",
+              "default": "xl"
+            },
+            {
+              "type": "string",
+              "const": "2xl",
+              "default": "2xl"
+            },
+            {
+              "type": "string",
+              "const": "3xl",
+              "default": "3xl"
+            },
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Border"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@ItemsLayout": {
+      "type": "object",
+      "properties": {
+        "autosizeMobile": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Asymmetric",
+              "default": "Asymmetric"
+            },
+            {
+              "type": "string",
+              "const": "Symmetrical",
+              "default": "Symmetrical"
+            }
+          ],
+          "type": "string",
+          "title": "Autosize Mobile"
+        },
+        "autosizeDesktop": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Asymmetric",
+              "default": "Asymmetric"
+            },
+            {
+              "type": "string",
+              "const": "Symmetrical",
+              "default": "Symmetrical"
+            }
+          ],
+          "type": "string",
+          "title": "Autosize Desktop"
+        },
+        "borderRadius": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Border",
+          "description": "Item's border radius",
+          "title": "Border Radius"
+        }
+      },
+      "required": [],
+      "title": "ItemsLayout"
+    },
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "banners": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Banner[]",
@@ -9703,159 +10500,116 @@
           "minItems": 4,
           "title": "Banners"
         },
-        "layout": {
+        "imagesSizes": {
           "type": "object",
           "properties": {
-            "borderRadius": {
+            "mobile": {
               "type": "object",
               "properties": {
-                "mobile": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "none",
-                      "default": "none"
+                "largerImage": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "number",
+                      "title": "Height"
                     },
-                    {
-                      "type": "string",
-                      "const": "sm",
-                      "default": "sm"
-                    },
-                    {
-                      "type": "string",
-                      "const": "md",
-                      "default": "md"
-                    },
-                    {
-                      "type": "string",
-                      "const": "lg",
-                      "default": "lg"
-                    },
-                    {
-                      "type": "string",
-                      "const": "xl",
-                      "default": "xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "2xl",
-                      "default": "2xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "3xl",
-                      "default": "3xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "full",
-                      "default": "full"
+                    "width": {
+                      "type": "number",
+                      "title": "Width"
                     }
+                  },
+                  "required": [
+                    "height",
+                    "width"
                   ],
-                  "type": "string",
-                  "title": "Mobile"
+                  "title": "Larger Image"
                 },
-                "desktop": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "none",
-                      "default": "none"
+                "smallerImage": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "number",
+                      "title": "Height"
                     },
-                    {
-                      "type": "string",
-                      "const": "sm",
-                      "default": "sm"
-                    },
-                    {
-                      "type": "string",
-                      "const": "md",
-                      "default": "md"
-                    },
-                    {
-                      "type": "string",
-                      "const": "lg",
-                      "default": "lg"
-                    },
-                    {
-                      "type": "string",
-                      "const": "xl",
-                      "default": "xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "2xl",
-                      "default": "2xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "3xl",
-                      "default": "3xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "full",
-                      "default": "full"
+                    "width": {
+                      "type": "number",
+                      "title": "Width"
                     }
+                  },
+                  "required": [
+                    "height",
+                    "width"
                   ],
-                  "type": "string",
-                  "title": "Desktop"
+                  "title": "Smaller Image"
                 }
               },
-              "required": [],
-              "title": "Border Radius"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
+              "required": [
+                "largerImage",
+                "smallerImage"
               ],
-              "type": "string",
-              "title": "Header Alignment"
-            },
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Asymmetric",
-                  "default": "Asymmetric"
-                },
-                {
-                  "type": "string",
-                  "const": "Symmetrical",
-                  "default": "Symmetrical"
-                }
-              ],
-              "type": "string",
               "title": "Mobile"
             },
             "desktop": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Asymmetric",
-                  "default": "Asymmetric"
+              "type": "object",
+              "properties": {
+                "largerImage": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "number",
+                      "title": "Height"
+                    },
+                    "width": {
+                      "type": "number",
+                      "title": "Width"
+                    }
+                  },
+                  "required": [
+                    "height",
+                    "width"
+                  ],
+                  "title": "Larger Image"
                 },
-                {
-                  "type": "string",
-                  "const": "Symmetrical",
-                  "default": "Symmetrical"
+                "smallerImage": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "number",
+                      "title": "Height"
+                    },
+                    "width": {
+                      "type": "number",
+                      "title": "Width"
+                    }
+                  },
+                  "required": [
+                    "height",
+                    "width"
+                  ],
+                  "title": "Smaller Image"
                 }
+              },
+              "required": [
+                "largerImage",
+                "smallerImage"
               ],
-              "type": "string",
               "title": "Desktop"
             }
           },
           "required": [],
+          "title": "Images Sizes"
+        },
+        "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
           "title": "Layout"
+        },
+        "itemsLayout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@ItemsLayout",
+          "title": "Items Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@Style",
+          "title": "Style"
         }
       },
       "required": [],
@@ -10592,98 +11346,21 @@
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "textarea",
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "form": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Form",
           "title": "Form"
         },
         "layout": {
-          "type": "object",
-          "properties": {
-            "headerFontSize": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Large",
-                  "default": "Large"
-                },
-                {
-                  "type": "string",
-                  "const": "Normal",
-                  "default": "Normal"
-                }
-              ],
-              "type": "string",
-              "title": "Header Font Size"
-            },
-            "content": {
-              "type": "object",
-              "properties": {
-                "border": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Border"
-                },
-                "alignment": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Center",
-                      "default": "Center"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Left",
-                      "default": "Left"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Side to side",
-                      "default": "Side to side"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Alignment"
-                },
-                "bgColor": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Normal",
-                      "default": "Normal"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Reverse",
-                      "default": "Reverse"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Bg Color"
-                }
-              },
-              "required": [],
-              "title": "Content"
-            }
-          },
-          "required": [],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
           "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
         }
       },
       "required": [],
@@ -10723,6 +11400,9 @@
         "page"
       ],
       "title": "deco-sites/demo/components/product/ProductDetails.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
+      "title": "HeaderLayout"
     },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0Q2FyZC50c3g=@Layout": {
       "type": "object",
@@ -10939,57 +11619,12 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
           "title": "Products"
         },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "layout": {
-          "type": "object",
-          "properties": {
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            },
-            "headerfontSize": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Normal",
-                  "default": "Normal"
-                },
-                {
-                  "type": "string",
-                  "const": "Large",
-                  "default": "Large"
-                }
-              ],
-              "type": "string",
-              "title": "Headerfont Size"
-            }
-          },
-          "required": [],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout",
           "title": "Layout"
         },
         "cardLayout": {
@@ -11078,21 +11713,9 @@
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL1NvY2lhbC9JbnN0YWdyYW1Qb3N0cy50c3g=@layout": {
       "type": "object",
       "properties": {
-        "headerAlignment": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "center",
-              "default": "center"
-            },
-            {
-              "type": "string",
-              "const": "left",
-              "default": "left"
-            }
-          ],
-          "type": "string",
-          "title": "Header Alignment"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout",
+          "title": "Header"
         },
         "numberOfPosts": {
           "type": [
@@ -11117,19 +11740,9 @@
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL1NvY2lhbC9JbnN0YWdyYW1Qb3N0cy50c3g=@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "facebookToken": {
           "type": "string",

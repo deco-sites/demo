@@ -1,6 +1,7 @@
 import { useSignal } from "@preact/signals";
 import { Runtime } from "$store/runtime.ts";
 import type { JSX } from "preact";
+import { ButtonType, getButtonClasses } from "$store/components/ui/Types.tsx"
 
 const subscribe = Runtime.create(
   "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
@@ -21,7 +22,7 @@ export interface Props {
 }
 
 function Newsletter(
-  { content, tiled = false }: { content: Props; tiled: boolean },
+  { content, tiled = false, btnStyle = {} }: { content: Props; tiled: boolean, btnStyle?: ButtonType },
 ) {
   const loading = useSignal(false);
 
@@ -57,24 +58,19 @@ function Newsletter(
         {content?.description && <div>{content?.description}</div>}
       </div>
       <div class="flex flex-col gap-4">
-        <form
-          class="form-control"
-          onSubmit={handleSubmit}
-        >
-          <div class="flex gap-3">
-            <input
-              name="email"
-              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
-              placeholder={content?.form?.placeholder || "Digite seu email"}
-            />
-            <button
-              type="submit"
-              class="btn disabled:loading"
-              disabled={loading}
-            >
-              {content?.form?.buttonText || "Inscrever"}
-            </button>
-          </div>
+        <form onSubmit={handleSubmit} class="flex gap-1 lg:gap-3">
+          <input
+            name="email"
+            class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
+            placeholder={content?.form?.placeholder || "Digite seu email"}
+          />
+          <button
+            type="submit"
+            class={`${getButtonClasses(btnStyle)} disabled:loading`}
+            disabled={loading}
+          >
+            {content?.form?.buttonText || "Inscrever"}
+          </button>
         </form>
         {content?.form?.helpText && (
           <div

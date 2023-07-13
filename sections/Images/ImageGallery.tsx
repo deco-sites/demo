@@ -1,6 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
 
 /**
  * @titleBy alt
@@ -8,13 +8,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 export interface Banner {
   srcMobile: LiveImage;
   srcDesktop?: LiveImage;
-  /**
-   * @description Image alt text
-   */
   alt: string;
-  /**
-   * @description Adicione um link
-   */
   href: string;
 }
 
@@ -28,28 +22,54 @@ export type BorderRadius =
   | "3xl"
   | "full";
 
+export interface Border {
+  /** @default none */
+  mobile?: BorderRadius;
+  /** @default none */
+  desktop?: BorderRadius;
+}
+  
+export interface ItemsLayout {
+  autosizeMobile?: "Asymmetric" | "Symmetrical";
+  autosizeDesktop?: "Asymmetric" | "Symmetrical";
+  /**
+   * @description Item's border radius
+   */
+  borderRadius?: Border;
+}
+  
 export interface Props {
-  title?: string;
-  description?: string;
+  header?: HeaderContent;
   /**
    * @maxItems 4
    * @minItems 4
    */
   banners?: Banner[];
-  layout?: {
-    /**
-     * @description Aplique borda a sua imagem
-     */
-    borderRadius?: {
-      /** @default none */
-      mobile?: BorderRadius;
-      /** @default none */
-      desktop?: BorderRadius;
-    };
-    headerAlignment?: "center" | "left";
-    mobile?: "Asymmetric" | "Symmetrical";
-    desktop?: "Asymmetric" | "Symmetrical";
-  };
+  imagesSizes?: {
+    mobile?: {
+      largerImage: {
+        height: number;
+        width: number;
+      }
+      smallerImage: {
+        height: number;
+        width: number;
+      };
+    }
+    desktop?: {
+      largerImage: {
+        height: number;
+        width: number;
+      }
+      smallerImage: {
+        height: number;
+        width: number;
+      };
+    }
+  }
+  layout?: Layout;
+  itemsLayout?: ItemsLayout;
+  style?: Style;
 }
 
 const RADIUS: Record<string, Record<BorderRadius, string>> = {
@@ -79,45 +99,44 @@ const DEFAULT_PROPS: Props = {
   "banners": [
     {
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/4b5b4797-8728-483f-a7af-f775b0afb01a",
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/a8d36df6-4b96-4421-bb6c-de0fe1478e06",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/a8ba1db7-3e23-47e5-83ac-43dfbd2413fd",
-      "alt": "capi",
-      "href": "/capibara",
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/a8d36df6-4b96-4421-bb6c-de0fe1478e06",
+      "alt": "Image 1",
+      "href": "/",
     },
     {
-      "alt": "Capybara",
-      "href": "https://en.wikipedia.org/wiki/Capybara",
+      "alt": "Image 2",
+      "href": "/",
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/cabc6f7d-7f9b-4f37-9ed7-3ebe840f4087",
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/29dbf8d4-90c3-43f7-9b6b-4c6bda5e7835",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/9704ea7e-1810-4f3c-bd17-00e755022e57",
-    },
-    {
-      "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3ec93523-7b64-4c23-987a-410e59e86471",
-      "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/18e739cc-31d3-4e5a-9d24-abd4a39697c2",
-      "href": "https://en.wikipedia.org/wiki/Capybara",
-      "alt": "Capybara",
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/29dbf8d4-90c3-43f7-9b6b-4c6bda5e7835",
     },
     {
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/86de29ff-9bee-4051-960d-14a72f346b9e",
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1e6250d4-f9d2-4185-b8a6-b0e8a8fed4a7",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/92fa4c80-5eac-462e-abb6-f2e91fac7de6",
-      "alt": "Capybara",
-      "href": "https://en.wikipedia.org/wiki/Capybara",
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1e6250d4-f9d2-4185-b8a6-b0e8a8fed4a7",
+      "href": "/",
+      "alt": "Image 3",
+    },
+    {
+      "srcMobile":
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3210eea1-5437-4f19-8327-8b8fa4edfc45",
+      "srcDesktop":
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3210eea1-5437-4f19-8327-8b8fa4edfc45",
+      "alt": "Image 4",
+      "href": "/",
     },
   ],
-  "layout": {
+  "itemsLayout": {
     "borderRadius": {
       "mobile": "3xl",
       "desktop": "2xl",
     },
-    "headerAlignment": "center",
-    "mobile": "Asymmetric",
-    "desktop": "Asymmetric",
+    "autosizeMobile": "Asymmetric",
+    "autosizeDesktop": "Asymmetric",
   },
 };
 
@@ -129,6 +148,17 @@ function Banner(
       /** @default none */
       desktop?: BorderRadius;
     };
+    type: string;
+    sizeMobile?: {
+      height: number;
+      width: number;
+    };
+    sizeDesktop?: {
+      height: number;
+      width: number;
+    };
+    mobile: string;
+    desktop: string;
   },
 ) {
   const { borderRadius, srcMobile, srcDesktop, alt } = props;
@@ -142,19 +172,19 @@ function Banner(
     >
       <Picture>
         <Source
-          width={190}
-          height={190}
+          width={props.sizeMobile ? props.sizeMobile.width : 400}
+          height={props.sizeMobile ? props.sizeMobile.height : props.type === "large" ? 400 : props.mobile == "Symmetrical" ? 400 : 220}
           media="(max-width: 767px)"
           src={srcMobile}
         />
         <Source
-          width={640}
-          height={420}
+          width={props.sizeDesktop ? props.sizeDesktop.width : 640}
+          height={props.sizeDesktop ? props.sizeDesktop.height : props.type === "large" ? 640 : props.desktop == "Symmetrical" ? 640 : 400}
           media="(min-width: 768px)"
           src={srcDesktop || srcMobile}
         />
         <img
-          class="w-full h-full object-cover"
+          class={`w-full object-cover"}`}
           src={srcMobile}
           alt={alt}
           decoding="async"
@@ -166,39 +196,55 @@ function Banner(
 }
 
 export default function Gallery(props: Props) {
-  const { title, description, banners, layout } = {
+  const { header, banners, imagesSizes, layout, itemsLayout, style } = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
-  const mobileItemLayout = (index: number) =>
-    layout?.mobile === "Symmetrical"
-      ? "row-span-3"
-      : index === 0 || index === 3
-      ? "row-span-3"
-      : "row-span-2";
-
-  const desktopItemLayout = (index: number) =>
-    layout?.desktop === "Symmetrical"
-      ? "sm:row-span-3"
-      : index === 0 || index === 3
-      ? "sm:row-span-3"
-      : "sm:row-span-2";
-
   return (
-    <section class="container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
-      <Header
-        title={title}
-        description={description}
-        alignment={layout?.headerAlignment || "center"}
-      />
-      <ul class="grid grid-flow-col grid-cols-2 grid-rows-6 gap-4 list-none">
-        {banners?.map((banner, index) => (
-          <li class={`${mobileItemLayout(index)} ${desktopItemLayout(index)}`}>
-            <Banner {...banner} borderRadius={props.layout?.borderRadius} />
-          </li>
-        ))}
-      </ul>
-    </section>
+    <Container header={header} layout={layout} style={style}>
+      <div class="flex gap-4">
+        <div class="flex flex-col gap-4 w-1/2">
+          {banners?.map((banner, index) => (
+            <>
+              {
+                index < 2 && (
+                  <Banner
+                    {...banner}
+                    borderRadius={itemsLayout?.borderRadius}
+                    type={index % 2 == 0 ? "large" : "small"}
+                    sizeMobile={index % 2 == 0 ? imagesSizes?.mobile?.largerImage : imagesSizes?.mobile?.smallerImage}
+                    sizeDesktop={index % 2 == 0 ? imagesSizes?.desktop?.largerImage : imagesSizes?.desktop?.smallerImage}
+                    mobile={itemsLayout?.autosizeMobile || "Asymmetric"}
+                    desktop={itemsLayout?.autosizeDesktop || "Asymmetric"}
+                  />
+                )
+              }
+            </>
+          ))}
+        </div>
+        <div class="flex flex-col gap-4 w-1/2">
+          {banners?.map((banner, index) => (
+            <>
+              {
+                index >= 2 && (
+
+                  <Banner
+                    {...banner}
+                    borderRadius={itemsLayout?.borderRadius}
+                    type={index % 2 != 0 ? "large" : "small"}
+                    sizeMobile={index % 2 != 0 ? imagesSizes?.mobile?.largerImage : imagesSizes?.mobile?.smallerImage}
+                    sizeDesktop={index % 2 != 0 ? imagesSizes?.desktop?.largerImage : imagesSizes?.desktop?.smallerImage}
+                    mobile={itemsLayout?.autosizeMobile || "Asymmetric"}
+                    desktop={itemsLayout?.autosizeDesktop || "Asymmetric"}
+                  />
+                )
+              }
+            </>
+          ))}
+        </div>
+
+      </div>
+    </Container>
   );
 }
