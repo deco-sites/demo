@@ -100,9 +100,9 @@ function ProductCard({ product, preload, itemListName, layout, btnStyle = {} }: 
   return (
     <div
       id={id}
-      class={`card card-compact group w-full ${
+      class={`card card-compact group w-full rounded-md ${
         align === "center" ? "text-center" : "text-start"
-      } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
+      } ${l?.onMouseOver?.showCardShadow ? "border border-transparent lg:hover:shadow lg:hover:border-base-200" : ""}
         ${
         l?.onMouseOver?.card === "Move up" &&
         "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
