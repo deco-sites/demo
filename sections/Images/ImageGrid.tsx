@@ -1,11 +1,12 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Container, { HeaderContent, Layout, ExtendedStyle } from "$store/components/ui/Container.tsx"
+import { imgPh } from "$store/components/ui/Types.tsx"
 
 /**
  * @titleBy alt
  */
-export interface Banner {
+export interface Image {
   srcMobile: LiveImage;
   srcDesktop?: LiveImage;
   alt: string;
@@ -45,14 +46,16 @@ export interface ItemsLayout {
 }
 
 export interface Size {
+  /** @default 600 */
   width: number;
+  /** @default 300 */
   height: number;
 }
 
 export interface Props {
   header?: HeaderContent;
-  banners?: Banner[];
-  bannerSize: Size;
+  images?: Image[];
+  imageSize?: Size;
   itemsLayout?: ItemsLayout;
   layout?: Layout;
   style?: ExtendedStyle;
@@ -103,33 +106,33 @@ export default function ImageGrid({
   layout,
   itemsLayout,
   style,
-  banners = [
+  images = [
     {
-      srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/a8d36df6-4b96-4421-bb6c-de0fe1478e06",
+      srcMobile: imgPh["rct-sm"],
       srcDesktop: "",
       alt: "",
       href: "/",
     },
     {
-      srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/29dbf8d4-90c3-43f7-9b6b-4c6bda5e7835",
+      srcMobile: imgPh["rct-sm"],
       srcDesktop: "",
       alt: "",
       href: "/",
     },
     {
-      srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1e6250d4-f9d2-4185-b8a6-b0e8a8fed4a7",
+      srcMobile: imgPh["rct-sm"],
       srcDesktop: "",
       alt: "",
       href: "/",
     },
     {
-      srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3210eea1-5437-4f19-8327-8b8fa4edfc45",
+      srcMobile: imgPh["rct-sm"],
       srcDesktop: "",
       alt: "",
       href: "/",
     },
   ],
-  bannerSize = { width: 600, height: 300 },
+  imageSize = { width: 600, height: 300 },
 }: Props) {
   const items = itemsLayout?.itemsPerLine
   const radius = itemsLayout?.borderRadius
@@ -143,7 +146,7 @@ export default function ImageGrid({
           ${items?.mobile === "Auto" ? "lg:grid-flow-dense" : ""}
         `}
       >
-        {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
+        {images.map(({ href, srcMobile, srcDesktop, alt }) => (
           <a
             href={href}
             class={`overflow-hidden
@@ -155,14 +158,14 @@ export default function ImageGrid({
               <Source
                 media="(max-width: 767px)"
                 src={srcMobile}
-                width={bannerSize.width}
-                height={bannerSize.height}
+                width={imageSize.width}
+                height={imageSize.height}
               />
               <Source
                 media="(min-width: 768px)"
                 src={srcDesktop ? srcDesktop : srcMobile}
-                width={bannerSize.width}
-                height={bannerSize.height}
+                width={imageSize.width}
+                height={imageSize.height}
               />
               <img
                 class="w-full"

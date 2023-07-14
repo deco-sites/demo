@@ -44,6 +44,12 @@ export const layoutClasses = {
     "Two Thirds": "lg:mx-auto lg:w-2/3"
 }
 
+export const imgPh = {
+    "sq": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
+    "rct-sm": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/b0f8ca2d-9c83-48f7-88de-1a6e6d1e9eb7",
+    "rct-lg": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/6fe9404a-f69c-472a-b521-78f6c1f87326"
+}
+
 export const colorClasses = {
     "Transparent": "",
     "Backdrop opacity": "backdrop-opacity-30 bg-white/40",

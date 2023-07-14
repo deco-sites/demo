@@ -20,7 +20,7 @@ import * as $$$$$$$$0 from "./sections/Footer/Footer.tsx";
 import * as $$$$$$$$1 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$$$2 from "./sections/Category/CategoryList.tsx";
 import * as $$$$$$$$3 from "./sections/Images/ShoppableBanner.tsx";
-import * as $$$$$$$$4 from "./sections/Images/BannerGrid.tsx";
+import * as $$$$$$$$4 from "./sections/Images/ImageGrid.tsx";
 import * as $$$$$$$$5 from "./sections/Images/ImageGallery.tsx";
 import * as $$$$$$$$6 from "./sections/Images/Carousel.tsx";
 import * as $$$$$$$$7 from "./sections/Content/Testimonials.tsx";
@@ -210,9 +210,9 @@ const manifest = {
     "deco-sites/demo/sections/Content/Testimonials.tsx": $$$$$$$$7,
     "deco-sites/demo/sections/Footer/Footer.tsx": $$$$$$$$0,
     "deco-sites/demo/sections/Header/Header.tsx": $$$$$$$$23,
-    "deco-sites/demo/sections/Images/BannerGrid.tsx": $$$$$$$$4,
     "deco-sites/demo/sections/Images/Carousel.tsx": $$$$$$$$6,
     "deco-sites/demo/sections/Images/ImageGallery.tsx": $$$$$$$$5,
+    "deco-sites/demo/sections/Images/ImageGrid.tsx": $$$$$$$$4,
     "deco-sites/demo/sections/Images/ShoppableBanner.tsx": $$$$$$$$3,
     "deco-sites/demo/sections/Links/LinkTree.tsx": $$$$$$$$20,
     "deco-sites/demo/sections/Links/Shortcuts.tsx": $$$$$$$$21,

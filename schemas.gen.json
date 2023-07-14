@@ -98,9 +98,9 @@
               "deco-sites/demo/sections/Content/Testimonials.tsx",
               "deco-sites/demo/sections/Footer/Footer.tsx",
               "deco-sites/demo/sections/Header/Header.tsx",
-              "deco-sites/demo/sections/Images/BannerGrid.tsx",
               "deco-sites/demo/sections/Images/Carousel.tsx",
               "deco-sites/demo/sections/Images/ImageGallery.tsx",
+              "deco-sites/demo/sections/Images/ImageGrid.tsx",
               "deco-sites/demo/sections/Images/ShoppableBanner.tsx",
               "deco-sites/demo/sections/Links/LinkTree.tsx",
               "deco-sites/demo/sections/Links/Shortcuts.tsx",
@@ -9995,275 +9995,6 @@
       ],
       "title": "deco-sites/demo/components/header/Header.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
-      "type": "object",
-      "properties": {
-        "srcMobile": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Src Mobile"
-        },
-        "srcDesktop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Src Desktop"
-        },
-        "alt": {
-          "type": "string",
-          "title": "Alt"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        }
-      },
-      "required": [
-        "srcMobile",
-        "alt",
-        "href"
-      ],
-      "title": "Banner",
-      "titleBy": "alt"
-    },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner"
-      },
-      "title": "Banner[]"
-    },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Size": {
-      "type": "object",
-      "properties": {
-        "width": {
-          "type": "number",
-          "title": "Width"
-        },
-        "height": {
-          "type": "number",
-          "title": "Height"
-        }
-      },
-      "required": [
-        "width",
-        "height"
-      ],
-      "title": "Size"
-    },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items": {
-      "type": "object",
-      "properties": {
-        "mobile": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Auto",
-              "default": "Auto"
-            },
-            {
-              "type": "string",
-              "const": "1",
-              "default": "1"
-            },
-            {
-              "type": "string",
-              "const": "2",
-              "default": "2"
-            }
-          ],
-          "type": "string",
-          "default": "Auto",
-          "title": "Mobile"
-        },
-        "desktop": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Auto",
-              "default": "Auto"
-            },
-            {
-              "type": "string",
-              "const": "1",
-              "default": "1"
-            },
-            {
-              "type": "string",
-              "const": "2",
-              "default": "2"
-            },
-            {
-              "type": "string",
-              "const": "4",
-              "default": "4"
-            },
-            {
-              "type": "string",
-              "const": "6",
-              "default": "6"
-            },
-            {
-              "type": "string",
-              "const": "8",
-              "default": "8"
-            }
-          ],
-          "type": "string",
-          "default": "Auto",
-          "title": "Desktop"
-        }
-      },
-      "required": [],
-      "title": "Items"
-    },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Border": {
-      "type": "object",
-      "properties": {
-        "mobile": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "None",
-              "default": "None"
-            },
-            {
-              "type": "string",
-              "const": "Small",
-              "default": "Small"
-            },
-            {
-              "type": "string",
-              "const": "Medium",
-              "default": "Medium"
-            },
-            {
-              "type": "string",
-              "const": "Large",
-              "default": "Large"
-            },
-            {
-              "type": "string",
-              "const": "Extra large",
-              "default": "Extra large"
-            },
-            {
-              "type": "string",
-              "const": "2x Extra large",
-              "default": "2x Extra large"
-            },
-            {
-              "type": "string",
-              "const": "3x Extra large",
-              "default": "3x Extra large"
-            },
-            {
-              "type": "string",
-              "const": "Full",
-              "default": "Full"
-            }
-          ],
-          "type": "string",
-          "default": "none",
-          "title": "Mobile"
-        },
-        "desktop": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "None",
-              "default": "None"
-            },
-            {
-              "type": "string",
-              "const": "Small",
-              "default": "Small"
-            },
-            {
-              "type": "string",
-              "const": "Medium",
-              "default": "Medium"
-            },
-            {
-              "type": "string",
-              "const": "Large",
-              "default": "Large"
-            },
-            {
-              "type": "string",
-              "const": "Extra large",
-              "default": "Extra large"
-            },
-            {
-              "type": "string",
-              "const": "2x Extra large",
-              "default": "2x Extra large"
-            },
-            {
-              "type": "string",
-              "const": "3x Extra large",
-              "default": "3x Extra large"
-            },
-            {
-              "type": "string",
-              "const": "Full",
-              "default": "Full"
-            }
-          ],
-          "type": "string",
-          "default": "none",
-          "title": "Desktop"
-        }
-      },
-      "required": [],
-      "title": "Border"
-    },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@ItemsLayout": {
-      "type": "object",
-      "properties": {
-        "itemsPerLine": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items",
-          "title": "Items Per Line"
-        },
-        "borderRadius": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Border",
-          "description": "Item's border radius",
-          "title": "Border Radius"
-        }
-      },
-      "required": [],
-      "title": "ItemsLayout"
-    },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "header": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
-          "title": "Header"
-        },
-        "banners": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner[]",
-          "title": "Banners"
-        },
-        "bannerSize": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Size",
-          "title": "Banner Size"
-        },
-        "itemsLayout": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@ItemsLayout",
-          "title": "Items Layout"
-        },
-        "layout": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
-          "title": "Layout"
-        },
-        "style": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
-          "title": "Style"
-        }
-      },
-      "required": [
-        "bannerSize"
-      ],
-      "title": "deco-sites/demo/components/ui/BannerGrid.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
       "properties": {
@@ -10660,6 +10391,275 @@
       },
       "required": [],
       "title": "deco-sites/demo/sections/Images/ImageGallery.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Image": {
+      "type": "object",
+      "properties": {
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Mobile"
+        },
+        "srcDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Desktop"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "srcMobile",
+        "alt",
+        "href"
+      ],
+      "title": "Image",
+      "titleBy": "alt"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Image[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Image"
+      },
+      "title": "Image[]"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Size": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "number",
+          "default": "600",
+          "title": "Width"
+        },
+        "height": {
+          "type": "number",
+          "default": "300",
+          "title": "Height"
+        }
+      },
+      "required": [
+        "width",
+        "height"
+      ],
+      "title": "Size"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Items": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Auto",
+              "default": "Auto"
+            },
+            {
+              "type": "string",
+              "const": "1",
+              "default": "1"
+            },
+            {
+              "type": "string",
+              "const": "2",
+              "default": "2"
+            }
+          ],
+          "type": "string",
+          "default": "Auto",
+          "title": "Mobile"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Auto",
+              "default": "Auto"
+            },
+            {
+              "type": "string",
+              "const": "1",
+              "default": "1"
+            },
+            {
+              "type": "string",
+              "const": "2",
+              "default": "2"
+            },
+            {
+              "type": "string",
+              "const": "4",
+              "default": "4"
+            },
+            {
+              "type": "string",
+              "const": "6",
+              "default": "6"
+            },
+            {
+              "type": "string",
+              "const": "8",
+              "default": "8"
+            }
+          ],
+          "type": "string",
+          "default": "Auto",
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Items"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Border": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "None",
+              "default": "None"
+            },
+            {
+              "type": "string",
+              "const": "Small",
+              "default": "Small"
+            },
+            {
+              "type": "string",
+              "const": "Medium",
+              "default": "Medium"
+            },
+            {
+              "type": "string",
+              "const": "Large",
+              "default": "Large"
+            },
+            {
+              "type": "string",
+              "const": "Extra large",
+              "default": "Extra large"
+            },
+            {
+              "type": "string",
+              "const": "2x Extra large",
+              "default": "2x Extra large"
+            },
+            {
+              "type": "string",
+              "const": "3x Extra large",
+              "default": "3x Extra large"
+            },
+            {
+              "type": "string",
+              "const": "Full",
+              "default": "Full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Mobile"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "None",
+              "default": "None"
+            },
+            {
+              "type": "string",
+              "const": "Small",
+              "default": "Small"
+            },
+            {
+              "type": "string",
+              "const": "Medium",
+              "default": "Medium"
+            },
+            {
+              "type": "string",
+              "const": "Large",
+              "default": "Large"
+            },
+            {
+              "type": "string",
+              "const": "Extra large",
+              "default": "Extra large"
+            },
+            {
+              "type": "string",
+              "const": "2x Extra large",
+              "default": "2x Extra large"
+            },
+            {
+              "type": "string",
+              "const": "3x Extra large",
+              "default": "3x Extra large"
+            },
+            {
+              "type": "string",
+              "const": "Full",
+              "default": "Full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Border"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@ItemsLayout": {
+      "type": "object",
+      "properties": {
+        "itemsPerLine": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Items",
+          "title": "Items Per Line"
+        },
+        "borderRadius": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Border",
+          "description": "Item's border radius",
+          "title": "Border Radius"
+        }
+      },
+      "required": [],
+      "title": "ItemsLayout"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
+        },
+        "images": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Image[]",
+          "title": "Images"
+        },
+        "imageSize": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Size",
+          "title": "Image Size"
+        },
+        "itemsLayout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@ItemsLayout",
+          "title": "Items Layout"
+        },
+        "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
+          "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/demo/sections/Images/ImageGrid.tsx@Props"
     },
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9TaG9wcGFibGVCYW5uZXIudHN4@Pin": {
       "type": "object",
@@ -15352,27 +15352,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9CYW5uZXJHcmlkLnRzeA==": {
-      "title": "deco-sites/demo/sections/Images/BannerGrid.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/demo/sections/Images/BannerGrid.tsx"
-          ],
-          "default": "deco-sites/demo/sections/Images/BannerGrid.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9DYXJvdXNlbC50c3g=": {
       "title": "deco-sites/demo/sections/Images/Carousel.tsx",
       "type": "object",
@@ -15412,6 +15391,27 @@
             "deco-sites/demo/sections/Images/ImageGallery.tsx"
           ],
           "default": "deco-sites/demo/sections/Images/ImageGallery.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4": {
+      "title": "deco-sites/demo/sections/Images/ImageGrid.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/demo/sections/Images/ImageGrid.tsx"
+          ],
+          "default": "deco-sites/demo/sections/Images/ImageGrid.tsx"
         }
       }
     },
@@ -16951,13 +16951,13 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9CYW5uZXJHcmlkLnRzeA=="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9DYXJvdXNlbC50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdyaWQudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9TaG9wcGFibGVCYW5uZXIudHN4"
