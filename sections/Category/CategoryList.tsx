@@ -5,7 +5,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
-import { getButtonClasses, ButtonColor, buttonClasses } from "$store/components/ui/Types.tsx"
+import { getButtonClasses, ButtonColor, buttonClasses, imgPh } from "$store/components/ui/Types.tsx"
 
 export interface Category {
   tag?: string;
@@ -63,7 +63,7 @@ function CategoryList(props: Props) {
       {
         tag: "10% off",
         href: "/masculino",
-        image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/5a8edfec-400f-421f-b436-4ce23d2b13e7",
+        image: imgPh["sq"],
         label: "Dresses",
         description: "Amazing",
         buttonText: "View procucts",
@@ -71,7 +71,7 @@ function CategoryList(props: Props) {
       {
         tag: "10% off",
         href: "/feminino",
-        image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7363da7a-8530-4e19-8b76-6f92c4da3f1e",
+        image: imgPh["sq"],
         label: "Bags",
         description: "Bags",
         buttonText: "View procucts",
@@ -79,7 +79,7 @@ function CategoryList(props: Props) {
       {
         tag: "10% off",
         href: "/",
-        image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/33755494-9104-410e-9e48-256aef7fc113",
+        image: imgPh["sq"],
         label: "Shoes",
         description: "New deals",
         buttonText: "View procucts",
@@ -87,7 +87,7 @@ function CategoryList(props: Props) {
       {
         tag: "10% off",
         href: "/",
-        image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/2d507523-6f5a-4bb5-98d5-d9c944b35845",
+        image: imgPh["sq"],
         label: "Jackets",
         description: "New colors",
         buttonText: "View procucts",
@@ -95,14 +95,14 @@ function CategoryList(props: Props) {
       {
         tag: "10% off",
         href: "/",
-        image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/907b5510-d4a0-4d75-b2bf-c0c9e9b0ba68",
+        image: imgPh["sq"],
         label: "Jeans",
         description: "Amazing",
         buttonText: "View procucts",
       },
       {
         href: "/",
-        image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/40eb7c93-59a7-4963-9917-32508c56e4cc",
+        image: imgPh["sq"],
         label: "Shorts",
         description: "Summer",
         buttonText: "View procucts",

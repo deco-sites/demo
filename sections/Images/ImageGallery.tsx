@@ -1,6 +1,7 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
+import { imgPh } from "$store/components/ui/Types.tsx"
 
 /**
  * @titleBy alt
@@ -37,6 +38,16 @@ export interface ItemsLayout {
    */
   borderRadius?: Border;
 }
+
+export interface Size {
+  height: number;
+  width: number;
+}
+
+export interface DeviceSize {
+  largerImage: Size;
+  smallerImage: Size;
+}
   
 export interface Props {
   header?: HeaderContent;
@@ -46,26 +57,8 @@ export interface Props {
    */
   banners?: Banner[];
   imagesSizes?: {
-    mobile?: {
-      largerImage: {
-        height: number;
-        width: number;
-      }
-      smallerImage: {
-        height: number;
-        width: number;
-      };
-    }
-    desktop?: {
-      largerImage: {
-        height: number;
-        width: number;
-      }
-      smallerImage: {
-        height: number;
-        width: number;
-      };
-    }
+    mobile?: DeviceSize;
+    desktop?: DeviceSize;
   }
   layout?: Layout;
   itemsLayout?: ItemsLayout;
@@ -98,34 +91,22 @@ const RADIUS: Record<string, Record<BorderRadius, string>> = {
 const DEFAULT_PROPS: Props = {
   "banners": [
     {
-      "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/a8d36df6-4b96-4421-bb6c-de0fe1478e06",
-      "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/a8d36df6-4b96-4421-bb6c-de0fe1478e06",
+      "srcMobile": imgPh["sq"],
       "alt": "Image 1",
       "href": "/",
     },
     {
       "alt": "Image 2",
       "href": "/",
-      "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/29dbf8d4-90c3-43f7-9b6b-4c6bda5e7835",
-      "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/29dbf8d4-90c3-43f7-9b6b-4c6bda5e7835",
+      "srcMobile": imgPh["sq"],
     },
     {
-      "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1e6250d4-f9d2-4185-b8a6-b0e8a8fed4a7",
-      "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1e6250d4-f9d2-4185-b8a6-b0e8a8fed4a7",
+      "srcMobile": imgPh["sq"],
       "href": "/",
       "alt": "Image 3",
     },
     {
-      "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3210eea1-5437-4f19-8327-8b8fa4edfc45",
-      "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3210eea1-5437-4f19-8327-8b8fa4edfc45",
+      "srcMobile": imgPh["sq"],
       "alt": "Image 4",
       "href": "/",
     },
@@ -149,14 +130,8 @@ function Banner(
       desktop?: BorderRadius;
     };
     type: string;
-    sizeMobile?: {
-      height: number;
-      width: number;
-    };
-    sizeDesktop?: {
-      height: number;
-      width: number;
-    };
+    sizeMobile?: Size;
+    sizeDesktop?: Size;
     mobile: string;
     desktop: string;
   },

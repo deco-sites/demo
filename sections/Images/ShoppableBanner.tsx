@@ -1,5 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { imgPh } from "$store/components/ui/Types.tsx"
 
 export interface Props {
   image: {
@@ -38,9 +39,8 @@ const DEFAULT_PROPS: Props = {
   },
   pins: [],
   image: {
-    mobile:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/aa071a4a-fd37-4efa-abf1-f736af0409a3",
-    altText: "capybara",
+    mobile: imgPh["sq"],
+    altText: "Image",
   },
 };
 
