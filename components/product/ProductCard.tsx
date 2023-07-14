@@ -245,7 +245,7 @@ function ProductCard({ product, preload, itemListName, layout, btnStyle = {} }: 
               {l?.hide?.productDescription
                 ? ""
                 : (
-                  <p class="truncate text-sm lg:text-sm text-neutral" dangerouslySetInnerHTML={{ __html: product.description || "" }}></p>
+                  <p class="truncate text-sm lg:text-sm text-neutral" dangerouslySetInnerHTML={{ __html: product.description ? product.description.replace(/<[^>]+>/g, '') : "" }}></p>
                 )}
             </div>
           )}
