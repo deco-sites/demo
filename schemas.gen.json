@@ -10030,56 +10030,84 @@
       },
       "title": "Banner[]"
     },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Size": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "number",
+          "title": "Width"
+        },
+        "height": {
+          "type": "number",
+          "title": "Height"
+        }
+      },
+      "required": [
+        "width",
+        "height"
+      ],
+      "title": "Size"
+    },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items": {
       "type": "object",
       "properties": {
         "mobile": {
           "anyOf": [
             {
-              "type": "number",
-              "const": 1,
-              "default": 1
+              "type": "string",
+              "const": "Auto",
+              "default": "Auto"
             },
             {
-              "type": "number",
-              "const": 2,
-              "default": 2
+              "type": "string",
+              "const": "1",
+              "default": "1"
+            },
+            {
+              "type": "string",
+              "const": "2",
+              "default": "2"
             }
           ],
-          "type": "number",
-          "default": "2",
+          "type": "string",
+          "default": "Auto",
           "title": "Mobile"
         },
         "desktop": {
           "anyOf": [
             {
-              "type": "number",
-              "const": 1,
-              "default": 1
+              "type": "string",
+              "const": "Auto",
+              "default": "Auto"
             },
             {
-              "type": "number",
-              "const": 2,
-              "default": 2
+              "type": "string",
+              "const": "1",
+              "default": "1"
             },
             {
-              "type": "number",
-              "const": 4,
-              "default": 4
+              "type": "string",
+              "const": "2",
+              "default": "2"
             },
             {
-              "type": "number",
-              "const": 6,
-              "default": 6
+              "type": "string",
+              "const": "4",
+              "default": "4"
             },
             {
-              "type": "number",
-              "const": 8,
-              "default": 8
+              "type": "string",
+              "const": "6",
+              "default": "6"
+            },
+            {
+              "type": "string",
+              "const": "8",
+              "default": "8"
             }
           ],
-          "type": "number",
-          "default": "4",
+          "type": "string",
+          "default": "Auto",
           "title": "Desktop"
         }
       },
@@ -10093,43 +10121,43 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "none",
-              "default": "none"
+              "const": "None",
+              "default": "None"
             },
             {
               "type": "string",
-              "const": "sm",
-              "default": "sm"
+              "const": "Small",
+              "default": "Small"
             },
             {
               "type": "string",
-              "const": "md",
-              "default": "md"
+              "const": "Medium",
+              "default": "Medium"
             },
             {
               "type": "string",
-              "const": "lg",
-              "default": "lg"
+              "const": "Large",
+              "default": "Large"
             },
             {
               "type": "string",
-              "const": "xl",
-              "default": "xl"
+              "const": "Extra large",
+              "default": "Extra large"
             },
             {
               "type": "string",
-              "const": "2xl",
-              "default": "2xl"
+              "const": "2x Extra large",
+              "default": "2x Extra large"
             },
             {
               "type": "string",
-              "const": "3xl",
-              "default": "3xl"
+              "const": "3x Extra large",
+              "default": "3x Extra large"
             },
             {
               "type": "string",
-              "const": "full",
-              "default": "full"
+              "const": "Full",
+              "default": "Full"
             }
           ],
           "type": "string",
@@ -10140,43 +10168,43 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "none",
-              "default": "none"
+              "const": "None",
+              "default": "None"
             },
             {
               "type": "string",
-              "const": "sm",
-              "default": "sm"
+              "const": "Small",
+              "default": "Small"
             },
             {
               "type": "string",
-              "const": "md",
-              "default": "md"
+              "const": "Medium",
+              "default": "Medium"
             },
             {
               "type": "string",
-              "const": "lg",
-              "default": "lg"
+              "const": "Large",
+              "default": "Large"
             },
             {
               "type": "string",
-              "const": "xl",
-              "default": "xl"
+              "const": "Extra large",
+              "default": "Extra large"
             },
             {
               "type": "string",
-              "const": "2xl",
-              "default": "2xl"
+              "const": "2x Extra large",
+              "default": "2x Extra large"
             },
             {
               "type": "string",
-              "const": "3xl",
-              "default": "3xl"
+              "const": "3x Extra large",
+              "default": "3x Extra large"
             },
             {
               "type": "string",
-              "const": "full",
-              "default": "full"
+              "const": "Full",
+              "default": "Full"
             }
           ],
           "type": "string",
@@ -10192,7 +10220,6 @@
       "properties": {
         "itemsPerLine": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items",
-          "description": "Default is 2 for mobile and all for desktop",
           "title": "Items Per Line"
         },
         "borderRadius": {
@@ -10215,20 +10242,26 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner[]",
           "title": "Banners"
         },
-        "layout": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
-          "title": "Layout"
+        "bannerSize": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Size",
+          "title": "Banner Size"
         },
         "itemsLayout": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@ItemsLayout",
           "title": "Items Layout"
+        },
+        "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
+          "title": "Layout"
         },
         "style": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
           "title": "Style"
         }
       },
-      "required": [],
+      "required": [
+        "bannerSize"
+      ],
       "title": "deco-sites/demo/components/ui/BannerGrid.tsx@Props"
     },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {

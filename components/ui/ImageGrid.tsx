@@ -13,20 +13,20 @@ export interface Banner {
 }
 
 export type BorderRadius =
-  | "none"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl"
-  | "3xl"
-  | "full";
+  | "None"
+  | "Small"
+  | "Medium"
+  | "Large"
+  | "Extra large"
+  | "2x Extra large"
+  | "3x Extra large"
+  | "Full";
 
 export interface Items {
-  /** @default 2 */
-  mobile?: 1 | 2;
-  /** @default 4 */
-  desktop?: 1 | 2 | 4 | 6 | 8;
+  /** @default Auto */
+  mobile?: "Auto" | "1" | "2";
+  /** @default Auto */
+  desktop?: "Auto" | "1" | "2" | "4" | "6" | "8";
 }
 
 export interface Border {
@@ -37,9 +37,6 @@ export interface Border {
 }
 
 export interface ItemsLayout {
-  /**
-   * @description Default is 2 for mobile and all for desktop
-   */
   itemsPerLine?: Items;
   /**
    * @description Item's border radius
@@ -47,53 +44,64 @@ export interface ItemsLayout {
   borderRadius?: Border;
 }
 
+export interface Size {
+  width: number;
+  height: number;
+}
+
 export interface Props {
   header?: HeaderContent;
   banners?: Banner[];
-  layout?: Layout;
+  bannerSize: Size;
   itemsLayout?: ItemsLayout;
+  layout?: Layout;
   style?: ExtendedStyle;
-
 }
 
 const MOBILE_COLUMNS = {
+  "Auto": "grid-flow-col",
   1: "grid-cols-1",
   2: "grid-cols-2",
 };
 
 const DESKTOP_COLUMNS = {
-  1: "sm:grid-cols-1",
-  2: "sm:grid-cols-2",
-  4: "sm:grid-cols-4",
-  6: "sm:grid-cols-6",
-  8: "sm:grid-cols-8",
+  "Auto": "lg:grid-flow-col",
+  1: "lg:grid-cols-1",
+  2: "lg:grid-cols-2",
+  3: "lg:grid-cols-2",
+  4: "lg:grid-cols-4",
+  5: "lg:grid-cols-4",
+  6: "lg:grid-cols-6",
+  7: "lg:grid-cols-8",
+  8: "lg:grid-cols-8",
 };
 
 const RADIUS_MOBILE = {
-  "none": "rounded-none",
-  "sm": "rounded-sm",
-  "md": "rounded-md",
-  "lg": "rounded-lg",
-  "xl": "rounded-xl",
-  "2xl": "rounded-2xl",
-  "3xl": "rounded-3xl",
-  "full": "rounded-full",
+  "None": "rounded-none",
+  "Small": "rounded-sm",
+  "Medium": "rounded-md",
+  "Large": "rounded-lg",
+  "Extra large": "rounded-xl",
+  "2x Extra large": "rounded-2xl",
+  "3x Extra large": "rounded-3xl",
+  "Full": "rounded-full",
 };
 
 const RADIUS_DESKTOP = {
-  "none": "sm:rounded-none",
-  "sm": "sm:rounded-sm",
-  "md": "sm:rounded-md",
-  "lg": "sm:rounded-lg",
-  "xl": "sm:rounded-xl",
-  "2xl": "sm:rounded-2xl",
-  "3xl": "sm:rounded-3xl",
-  "full": "sm:rounded-full",
+  "None": "lg:rounded-none",
+  "Small": "lg:rounded-sm",
+  "Medium": "lg:rounded-md",
+  "Large": "lg:rounded-lg",
+  "Extra large": "lg:rounded-xl",
+  "2x Extra large": "lg:rounded-2xl",
+  "3x Extra large": "lg:rounded-3xl",
+  "Full": "lg:rounded-full",
 };
 
-export default function BannnerGrid({
+export default function ImageGrid({
   header,
   layout,
+  itemsLayout,
   style,
   banners = [
     {
@@ -121,33 +129,40 @@ export default function BannnerGrid({
       href: "/",
     },
   ],
+  bannerSize = { width: 600, height: 300 },
 }: Props) {
+  const items = itemsLayout?.itemsPerLine
+  const radius = itemsLayout?.borderRadius
+
   return (
     <Container header={header} layout={layout} style={style}>
       <div
-        class={`grid gap-4 md:gap-6 ${
-          MOBILE_COLUMNS[layout?.itemsPerLine?.mobile ?? 2]
-        } ${DESKTOP_COLUMNS[layout?.itemsPerLine?.desktop ?? 4]}`}
+        class={`grid gap-4
+          ${MOBILE_COLUMNS[items?.mobile ?? "Auto"]}
+          ${DESKTOP_COLUMNS[items?.desktop ?? "Auto"]}
+          ${items?.mobile === "Auto" ? "lg:grid-flow-dense" : ""}
+        `}
       >
         {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
           <a
             href={href}
-            class={`overflow-hidden ${
-              RADIUS_MOBILE[layout?.borderRadius.mobile ?? "none"]
-            } ${RADIUS_DESKTOP[layout?.borderRadius.desktop ?? "none"]} `}
+            class={`overflow-hidden
+              ${RADIUS_MOBILE[radius?.mobile ?? "None"]}
+              ${RADIUS_DESKTOP[radius?.desktop ?? "None"]}
+            `}
           >
             <Picture>
               <Source
                 media="(max-width: 767px)"
                 src={srcMobile}
-                width={100}
-                height={100}
+                width={bannerSize.width}
+                height={bannerSize.height}
               />
               <Source
                 media="(min-width: 768px)"
                 src={srcDesktop ? srcDesktop : srcMobile}
-                width={250}
-                height={250}
+                width={bannerSize.width}
+                height={bannerSize.height}
               />
               <img
                 class="w-full"
