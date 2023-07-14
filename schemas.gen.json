@@ -11401,9 +11401,6 @@
       ],
       "title": "deco-sites/demo/components/product/ProductDetails.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
-      "title": "HeaderLayout"
-    },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0Q2FyZC50c3g=@Layout": {
       "type": "object",
       "properties": {
@@ -11624,8 +11621,12 @@
           "title": "Header"
         },
         "layout": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
           "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
         },
         "cardLayout": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0Q2FyZC50c3g=@Layout",
@@ -11709,6 +11710,9 @@
         "page"
       ],
       "title": "deco-sites/demo/components/search/SearchResult.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
+      "title": "HeaderLayout"
     },
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL1NvY2lhbC9JbnN0YWdyYW1Qb3N0cy50c3g=@layout": {
       "type": "object",
