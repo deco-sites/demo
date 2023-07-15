@@ -1,7 +1,7 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Layout {
-    sectionWidth?: "Full" | "Full bleed"
+    sectionWidth?: "Full bleed" | "Full"
     contentWidth?: "Full" | "2/3" | "Full bleed"
 }
 

@@ -8023,13 +8023,13 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "Full",
-              "default": "Full"
+              "const": "Full bleed",
+              "default": "Full bleed"
             },
             {
               "type": "string",
-              "const": "Full bleed",
-              "default": "Full bleed"
+              "const": "Full",
+              "default": "Full"
             }
           ],
           "type": "string",

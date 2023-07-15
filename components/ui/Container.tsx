@@ -68,7 +68,7 @@ export default function Container({children, ...props}: Props) {
   return (
     <div class={`
       ${containerBgColorClasses}
-      ${layoutClasses[layout?.sectionWidth || "Full"]}
+      ${layoutClasses[layout?.sectionWidth || "Full bleed"]}
       ${hasPadding ? "p-4 lg:p-16" : ""}
       ${style?.section?.bgImage ? "bg-cover bg-center" : ""}`}
       style={{ "background-image": style?.section?.bgImage ? `url(${style?.section?.bgImage})` : "" }}
