@@ -11482,6 +11482,167 @@
           "required": [],
           "title": "Elements Positions"
         },
+        "backgroundAndBorder": {
+          "type": "object",
+          "properties": {
+            "bgColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Transparent",
+                  "default": "Transparent"
+                },
+                {
+                  "type": "string",
+                  "const": "Backdrop opacity",
+                  "default": "Backdrop opacity"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Bg Color"
+            },
+            "borderColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Transparent",
+                  "default": "Transparent"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Border Color"
+            },
+            "borderRadius": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "None",
+                  "default": "None"
+                },
+                {
+                  "type": "string",
+                  "const": "Small",
+                  "default": "Small"
+                },
+                {
+                  "type": "string",
+                  "const": "Normal",
+                  "default": "Normal"
+                },
+                {
+                  "type": "string",
+                  "const": "Medium",
+                  "default": "Medium"
+                },
+                {
+                  "type": "string",
+                  "const": "Large",
+                  "default": "Large"
+                },
+                {
+                  "type": "string",
+                  "const": "Extra large",
+                  "default": "Extra large"
+                },
+                {
+                  "type": "string",
+                  "const": "Full",
+                  "default": "Full"
+                }
+              ],
+              "type": "string",
+              "title": "Border Radius"
+            },
+            "shadow": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "None",
+                  "default": "None"
+                },
+                {
+                  "type": "string",
+                  "const": "Small",
+                  "default": "Small"
+                },
+                {
+                  "type": "string",
+                  "const": "Normal",
+                  "default": "Normal"
+                },
+                {
+                  "type": "string",
+                  "const": "Medium",
+                  "default": "Medium"
+                },
+                {
+                  "type": "string",
+                  "const": "Large",
+                  "default": "Large"
+                },
+                {
+                  "type": "string",
+                  "const": "Extra large",
+                  "default": "Extra large"
+                }
+              ],
+              "type": "string",
+              "title": "Shadow"
+            }
+          },
+          "required": [],
+          "title": "Background And Border"
+        },
         "hide": {
           "type": "object",
           "properties": {

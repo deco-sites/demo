@@ -8,6 +8,7 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 import { SendEventOnClick } from "$store/sdk/analytics.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import { ButtonType, getButtonClasses } from "$store/components/ui/Types.tsx"
+import { Colors, BorderRadius, Shadow, BorderColors, colorClasses,  borderColorClasses2, borderRadiusClasses, shadowClasses } from "$store/components/ui/Types.tsx"
 
 export interface Layout {
   basics?: {
@@ -19,6 +20,12 @@ export interface Layout {
     skuSelector?: "Top" | "Bottom";
     favoriteIcon?: "Top right" | "Top left";
   };
+  backgroundAndBorder?: {
+    bgColor?: Colors;
+    borderColor?: BorderColors;
+    borderRadius?: BorderRadius;
+    shadow?: Shadow;
+  }
   hide?: {
     productName?: boolean;
     productDescription?: boolean;
@@ -73,6 +80,8 @@ function ProductCard({ product, preload, itemListName, layout, btnStyle = {} }: 
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
 
   const l = layout;
+  const b = l?.backgroundAndBorder;
+
   const align =
     !l?.basics?.contentAlignment || l?.basics?.contentAlignment == "Left"
       ? "left"
@@ -100,13 +109,14 @@ function ProductCard({ product, preload, itemListName, layout, btnStyle = {} }: 
   return (
     <div
       id={id}
-      class={`card card-compact group w-full rounded-md ${
-        align === "center" ? "text-center" : "text-start"
-      } ${l?.onMouseOver?.showCardShadow ? "border border-transparent lg:hover:shadow lg:hover:border-base-200" : ""}
-        ${
-        l?.onMouseOver?.card === "Move up" &&
-        "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
-      }
+      class={`card card-compact group w-full border overflow-hidden
+        ${colorClasses[b?.bgColor ? b?.bgColor : "Transparent"]}
+        ${shadowClasses[b?.shadow ? b?.shadow : "None"]}
+        ${borderRadiusClasses[b?.borderRadius ? b?.borderRadius : "None"]}
+        ${borderColorClasses2[b?.borderColor ? b?.borderColor : "Transparent"]}
+        ${align === "center" ? "text-center" : "text-start"}
+        ${l?.onMouseOver?.showCardShadow ? "lg:hover:border-transparent lg:hover:shadow lg:hover:border-base-200" : ""}
+        ${l?.onMouseOver?.card === "Move up" ? "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2" : ""}
       `}
       data-deco="view-product"
     >
@@ -214,7 +224,7 @@ function ProductCard({ product, preload, itemListName, layout, btnStyle = {} }: 
         </figcaption>
       </figure>
       {/* Prices & Name */}
-      <div class="flex-auto flex flex-col p-2 gap-3 lg:gap-4">
+      <div class="flex-auto flex flex-col pt-2 pb-4 px-4 gap-3 lg:gap-4">
         {/* SKU Selector */}
         {(!l?.elementsPositions?.skuSelector ||
           l?.elementsPositions?.skuSelector === "Top") && (

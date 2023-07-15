@@ -44,7 +44,7 @@ function ProductShelf({
   return (
     <Container header={header} layout={layout} style={style}>
       <div id={id} class="relative grid grid-flow-col">
-        <Slider class="w-full carousel carousel-center sm:carousel-end gap-6 col-span-full">
+        <Slider class="w-full carousel carousel-center sm:carousel-end gap-6 col-span-full pb-3">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}

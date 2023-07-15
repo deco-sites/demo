@@ -19,8 +19,33 @@ export type Colors =
     | "Base"
     | "Base inverted";
 
+export type BorderRadius =
+    "None"
+    | "Small"
+    | "Normal"
+    | "Medium"
+    | "Large"
+    | "Extra large"
+    | "Full"
+
+export type Shadow =
+    "None"
+    | "Small"
+    | "Normal"
+    | "Medium"
+    | "Large"
+    | "Extra large"
+
 export type TextColors = 
     "Auto"
+    | "Primary"
+    | "Secondary"
+    | "Tertiary"
+    | "Base"
+    | "Base inverted";
+
+export type BorderColors = 
+    "Transparent"
     | "Primary"
     | "Secondary"
     | "Tertiary"
@@ -36,6 +61,25 @@ export type ButtonColor =
 export interface ButtonType {
     color?: ButtonColor;
     outline?: boolean;
+}
+
+export const borderRadiusClasses = {
+    "None": "rounded-none",
+    "Small": "rounded-sm",
+    "Normal": "rounded",
+    "Medium": "rounded-md",
+    "Large": "rounded-lg",
+    "Extra large": "rounded-3xl",
+    "Full": "rounded-full"
+}
+
+export const shadowClasses = {
+    "None": "drop-shadow-none",
+    "Small": "drop-shadow-sm",
+    "Normal": "drop-shadow",
+    "Medium": "drop-shadow-md",
+    "Large": "drop-shadow-lg",
+    "Extra large": "drop-shadow-2xl",
 }
 
 export const layoutClasses = {
@@ -68,6 +112,15 @@ export const borderColorClasses = {
     "Tertiary": "border-accent-content",
     "Base": "border-base-content",
     "Base inverted": "border-base-100",
+}
+
+export const borderColorClasses2 = {
+    "Transparent": "border-transparent",
+    "Primary": "border-primary",
+    "Secondary": "border-secondary",
+    "Tertiary": "border-accent",
+    "Base": "border-base",
+    "Base inverted": "border-base-content",
 }
 
 export const lineColorClasses = {
