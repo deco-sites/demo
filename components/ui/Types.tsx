@@ -1,8 +1,8 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Layout {
-    sectionWidth?: "Container" | "Full"
-    contentWidth?: "Container" | "Two Thirds" | "Full"
+    sectionWidth?: "Full" | "Full bleed"
+    contentWidth?: "Full" | "2/3" | "Full bleed"
 }
 
 export interface Section {
@@ -39,9 +39,9 @@ export interface ButtonType {
 }
 
 export const layoutClasses = {
-    "Full": "",
-    "Container": "lg:container",
-    "Two Thirds": "lg:mx-auto lg:w-2/3"
+    "Full bleed": "",
+    "Full": "lg:container",
+    "2/3": "lg:mx-auto lg:w-2/3"
 }
 
 export const imgPh = {

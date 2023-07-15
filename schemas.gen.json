@@ -8023,13 +8023,13 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "Container",
-              "default": "Container"
+              "const": "Full",
+              "default": "Full"
             },
             {
               "type": "string",
-              "const": "Full",
-              "default": "Full"
+              "const": "Full bleed",
+              "default": "Full bleed"
             }
           ],
           "type": "string",
@@ -8039,18 +8039,18 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "Container",
-              "default": "Container"
-            },
-            {
-              "type": "string",
-              "const": "Two Thirds",
-              "default": "Two Thirds"
-            },
-            {
-              "type": "string",
               "const": "Full",
               "default": "Full"
+            },
+            {
+              "type": "string",
+              "const": "2/3",
+              "default": "2/3"
+            },
+            {
+              "type": "string",
+              "const": "Full bleed",
+              "default": "Full bleed"
             }
           ],
           "type": "string",
@@ -10119,6 +10119,42 @@
       },
       "title": "Banner[]"
     },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Size": {
+      "type": "object",
+      "properties": {
+        "height": {
+          "type": "number",
+          "title": "Height"
+        },
+        "width": {
+          "type": "number",
+          "title": "Width"
+        }
+      },
+      "required": [
+        "height",
+        "width"
+      ],
+      "title": "Size"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@DeviceSize": {
+      "type": "object",
+      "properties": {
+        "largerImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Size",
+          "title": "Larger Image"
+        },
+        "smallerImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Size",
+          "title": "Smaller Image"
+        }
+      },
+      "required": [
+        "largerImage",
+        "smallerImage"
+      ],
+      "title": "DeviceSize"
+    },
     "ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Border": {
       "type": "object",
       "properties": {
@@ -10281,95 +10317,11 @@
           "type": "object",
           "properties": {
             "mobile": {
-              "type": "object",
-              "properties": {
-                "largerImage": {
-                  "type": "object",
-                  "properties": {
-                    "height": {
-                      "type": "number",
-                      "title": "Height"
-                    },
-                    "width": {
-                      "type": "number",
-                      "title": "Width"
-                    }
-                  },
-                  "required": [
-                    "height",
-                    "width"
-                  ],
-                  "title": "Larger Image"
-                },
-                "smallerImage": {
-                  "type": "object",
-                  "properties": {
-                    "height": {
-                      "type": "number",
-                      "title": "Height"
-                    },
-                    "width": {
-                      "type": "number",
-                      "title": "Width"
-                    }
-                  },
-                  "required": [
-                    "height",
-                    "width"
-                  ],
-                  "title": "Smaller Image"
-                }
-              },
-              "required": [
-                "largerImage",
-                "smallerImage"
-              ],
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@DeviceSize",
               "title": "Mobile"
             },
             "desktop": {
-              "type": "object",
-              "properties": {
-                "largerImage": {
-                  "type": "object",
-                  "properties": {
-                    "height": {
-                      "type": "number",
-                      "title": "Height"
-                    },
-                    "width": {
-                      "type": "number",
-                      "title": "Width"
-                    }
-                  },
-                  "required": [
-                    "height",
-                    "width"
-                  ],
-                  "title": "Larger Image"
-                },
-                "smallerImage": {
-                  "type": "object",
-                  "properties": {
-                    "height": {
-                      "type": "number",
-                      "title": "Height"
-                    },
-                    "width": {
-                      "type": "number",
-                      "title": "Width"
-                    }
-                  },
-                  "required": [
-                    "height",
-                    "width"
-                  ],
-                  "title": "Smaller Image"
-                }
-              },
-              "required": [
-                "largerImage",
-                "smallerImage"
-              ],
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@DeviceSize",
               "title": "Desktop"
             }
           },
