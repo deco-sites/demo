@@ -1,5 +1,9 @@
-import { getButtonClasses } from "$store/components/ui/Types.tsx"
-import Container, { HeaderContent, Layout, ExtendedStyle } from "$store/components/ui/Container.tsx"
+import { getButtonClasses } from "$store/components/ui/Types.tsx";
+import Container, {
+  ExtendedStyle,
+  HeaderContent,
+  Layout,
+} from "$store/components/ui/Container.tsx";
 
 export interface Form {
   placeholder?: string;
@@ -29,7 +33,7 @@ const DEFAULT_PROPS: Props = {
 
 export default function Newsletter(props: Props) {
   const { header, form, layout, style } = { ...DEFAULT_PROPS, ...props };
-  
+
   return (
     <Container header={header} layout={layout} style={style}>
       <form action="/" class="flex flex-col gap-4">

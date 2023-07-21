@@ -4,8 +4,17 @@ import Slider from "$store/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
 import SliderJS from "$store/islands/SliderJS.tsx";
-import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
-import { getButtonClasses, ButtonColor, buttonClasses, imgPh } from "$store/components/ui/Types.tsx"
+import Container, {
+  ExtendedStyle as Style,
+  HeaderContent,
+  Layout,
+} from "$store/components/ui/Container.tsx";
+import {
+  buttonClasses,
+  ButtonColor,
+  getButtonClasses,
+  imgPh,
+} from "$store/components/ui/Types.tsx";
 
 export interface Category {
   tag?: string;
@@ -28,7 +37,7 @@ export interface Props {
   sliderStyle?: {
     controlsColor?: ButtonColor;
     controlsOutline?: boolean;
-  }
+  };
 }
 
 function CardText(
@@ -106,7 +115,7 @@ function CategoryList(props: Props) {
         label: "Shorts",
         description: "Summer",
         buttonText: "View procucts",
-      }
+      },
     ],
     layout,
     style,
@@ -114,7 +123,9 @@ function CategoryList(props: Props) {
     sliderStyle,
   } = props;
 
-  const controlsClasses = `${buttonClasses[sliderStyle?.controlsColor || "Default"]} ${sliderStyle?.controlsOutline ? "btn-outline" : ""}`
+  const controlsClasses = `${
+    buttonClasses[sliderStyle?.controlsColor || "Default"]
+  } ${sliderStyle?.controlsOutline ? "btn-outline" : ""}`;
 
   return (
     <Container header={header} layout={layout} style={style}>
@@ -165,18 +176,26 @@ function CategoryList(props: Props) {
                   )}
               </a>
               {buttonText &&
-                <a href={href} class={getButtonClasses(style?.button || {})}>{buttonText}</a>}
+                (
+                  <a href={href} class={getButtonClasses(style?.button || {})}>
+                    {buttonText}
+                  </a>
+                )}
             </Slider.Item>
           ))}
         </Slider>
         <>
           <div class="z-10 absolute -left-3 lg:-left-8 top-1/3">
-            <Slider.PrevButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+            <Slider.PrevButton
+              class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}
+            >
               <Icon size={24} id="ChevronLeft" />
             </Slider.PrevButton>
           </div>
           <div class="z-10 absolute -right-3 lg:-right-8 top-1/3">
-            <Slider.NextButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+            <Slider.NextButton
+              class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}
+            >
               <Icon size={24} id="ChevronRight" />
             </Slider.NextButton>
           </div>

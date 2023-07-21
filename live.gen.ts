@@ -74,6 +74,7 @@ import * as i2$$$$$$$$2 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$$$3 from "$live/matchers/MatchDevice.ts";
 import * as i2$$$$$$$$4 from "$live/matchers/MatchEnvironment.ts";
 import * as i2$$$$$$$$5 from "$live/matchers/MatchHost.ts";
+import * as i1$$$$$6 from "$live/matchers/MatchLocation.ts";
 import * as i2$$$$$$$$6 from "$live/matchers/MatchMulti.ts";
 import * as i2$$$$$$$$7 from "$live/matchers/MatchRandom.ts";
 import * as i2$$$$$$$$8 from "$live/matchers/MatchSite.ts";
@@ -112,12 +113,13 @@ import * as i2$23 from "deco-sites/std/functions/vtexProductList.ts";
 import * as i2$24 from "deco-sites/std/functions/vtexProductListingPage.ts";
 import * as i2$25 from "deco-sites/std/functions/vtexSuggestions.ts";
 import * as i2$26 from "deco-sites/std/functions/vtexWishlist.ts";
-import * as i2$$0 from "deco-sites/std/accounts/nuvemShop.ts";
-import * as i2$$1 from "deco-sites/std/accounts/occ.ts";
-import * as i2$$2 from "deco-sites/std/accounts/shopify.ts";
-import * as i2$$3 from "deco-sites/std/accounts/vnda.ts";
-import * as i2$$4 from "deco-sites/std/accounts/vtex.ts";
-import * as i2$$5 from "deco-sites/std/accounts/yourViews.ts";
+import * as i2$$0 from "deco-sites/std/accounts/butterCMS.ts";
+import * as i2$$1 from "deco-sites/std/accounts/nuvemShop.ts";
+import * as i2$$2 from "deco-sites/std/accounts/occ.ts";
+import * as i2$$3 from "deco-sites/std/accounts/shopify.ts";
+import * as i2$$4 from "deco-sites/std/accounts/vnda.ts";
+import * as i2$$5 from "deco-sites/std/accounts/vtex.ts";
+import * as i2$$6 from "deco-sites/std/accounts/yourViews.ts";
 import * as i2$$$3 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts";
 import * as i2$$$4 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts";
 import * as i2$$$5 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts";
@@ -135,6 +137,7 @@ import * as i2$$$16 from "deco-sites/std/loaders/vtex/navbar.ts";
 import * as i2$$$17 from "deco-sites/std/loaders/vtex/proxy.ts";
 import * as i2$$$18 from "deco-sites/std/loaders/vtex/user.ts";
 import * as i2$$$19 from "deco-sites/std/loaders/vtex/wishlist.ts";
+import * as i2$$$20 from "deco-sites/std/loaders/x/redirectsFromCsv.ts";
 import * as i2$$$$7 from "deco-sites/std/handlers/vtex/sitemap.ts";
 import * as i2$$$$$5 from "deco-sites/std/sections/Analytics.tsx";
 import * as i2$$$$$6 from "deco-sites/std/sections/configButterCMS.global.tsx";
@@ -261,6 +264,7 @@ const manifest = {
     "deco-sites/std/loaders/vtex/proxy.ts": i2$$$17,
     "deco-sites/std/loaders/vtex/user.ts": i2$$$18,
     "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$19,
+    "deco-sites/std/loaders/x/redirectsFromCsv.ts": i2$$$20,
   },
   "handlers": {
     "$live/handlers/devPage.ts": i2$$$$0,
@@ -282,6 +286,7 @@ const manifest = {
     "$live/matchers/MatchDevice.ts": i2$$$$$$$$3,
     "$live/matchers/MatchEnvironment.ts": i2$$$$$$$$4,
     "$live/matchers/MatchHost.ts": i2$$$$$$$$5,
+    "$live/matchers/MatchLocation.ts": i1$$$$$6,
     "$live/matchers/MatchMulti.ts": i2$$$$$$$$6,
     "$live/matchers/MatchRandom.ts": i2$$$$$$$$7,
     "$live/matchers/MatchSite.ts": i2$$$$$$$$8,
@@ -345,12 +350,13 @@ const manifest = {
     "deco-sites/std/functions/vtexWishlist.ts": i2$26,
   },
   "accounts": {
-    "deco-sites/std/accounts/nuvemShop.ts": i2$$0,
-    "deco-sites/std/accounts/occ.ts": i2$$1,
-    "deco-sites/std/accounts/shopify.ts": i2$$2,
-    "deco-sites/std/accounts/vnda.ts": i2$$3,
-    "deco-sites/std/accounts/vtex.ts": i2$$4,
-    "deco-sites/std/accounts/yourViews.ts": i2$$5,
+    "deco-sites/std/accounts/butterCMS.ts": i2$$0,
+    "deco-sites/std/accounts/nuvemShop.ts": i2$$1,
+    "deco-sites/std/accounts/occ.ts": i2$$2,
+    "deco-sites/std/accounts/shopify.ts": i2$$3,
+    "deco-sites/std/accounts/vnda.ts": i2$$4,
+    "deco-sites/std/accounts/vtex.ts": i2$$5,
+    "deco-sites/std/accounts/yourViews.ts": i2$$6,
   },
   "baseUrl": import.meta.url,
 };

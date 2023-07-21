@@ -1,6 +1,14 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
-import { Colors, colorClasses, borderColorClasses } from "$store/components/ui/Types.tsx"
+import Container, {
+  ExtendedStyle as Style,
+  HeaderContent,
+  Layout,
+} from "$store/components/ui/Container.tsx";
+import {
+  borderColorClasses,
+  colorClasses,
+  Colors,
+} from "$store/components/ui/Types.tsx";
 
 export interface Props {
   header?: HeaderContent;
@@ -13,9 +21,9 @@ export interface Props {
   style?: Style;
   itemsStyle?: {
     showDivider?: boolean;
-    iconPosition?: "Top" | "Left"
+    iconPosition?: "Top" | "Left";
     bgColor?: Colors;
-  }
+  };
 }
 
 export default function Benefits(
@@ -30,18 +38,18 @@ export default function Benefits(
       {
         "icon": "Truck",
         "label": "Delivery Nationwide",
-        "description": "Check the delivery timeframe during checkout."
+        "description": "Check the delivery timeframe during checkout.",
       },
       {
         "icon": "Discount",
         "label": "15% off on first purchase",
-        "description": "Applied directly in the shopping bag."
+        "description": "Applied directly in the shopping bag.",
       },
       {
         "icon": "ArrowsPointingOut",
         "label": "Free Returns",
-        "description": "See the conditions for returning your product."
-      }
+        "description": "See the conditions for returning your product.",
+      },
     ],
     layout,
     style,
@@ -49,21 +57,36 @@ export default function Benefits(
   } = props;
 
   const listOfBenefits = benefits.map((benefit, index) => {
-    const hasBg = itemsStyle?.bgColor && itemsStyle?.bgColor !== "Transparent"
-    const showDivider = !hasBg && itemsStyle?.showDivider && index < benefits.length - 1;
+    const hasBg = itemsStyle?.bgColor && itemsStyle?.bgColor !== "Transparent";
+    const showDivider = !hasBg && itemsStyle?.showDivider &&
+      index < benefits.length - 1;
 
     return (
       <div
         class={`${
-          hasBg ? `${colorClasses[itemsStyle?.bgColor || "Primary"]} p-4 lg:px-8 lg:py-4` : ""
+          hasBg
+            ? `${
+              colorClasses[itemsStyle?.bgColor || "Primary"]
+            } p-4 lg:px-8 lg:py-4`
+            : ""
         } flex gap-2 flex-col items-center text-center ${
-          itemsStyle?.iconPosition == "Left" ? "lg:flex-row lg:items-start lg:text-left lg:gap-4" : ""
+          itemsStyle?.iconPosition == "Left"
+            ? "lg:flex-row lg:items-start lg:text-left lg:gap-4"
+            : ""
         } ${
           showDivider
-            ? `border-b ${borderColorClasses[itemsStyle?.bgColor || style?.content?.bgColor || style?.section?.bgColor || "Transparent"]}`
+            ? `border-b ${
+              borderColorClasses[
+                itemsStyle?.bgColor || style?.content?.bgColor ||
+                style?.section?.bgColor || "Transparent"
+              ]
+            }`
             : ""
         } ${showDivider ? "pb-4 lg:pr-8 lg:border-r lg:border-b-0" : ""} ${
-          showDivider && (!itemsStyle?.bgColor || itemsStyle?.bgColor == "Transparent") ? "lg:pb-0" : ""
+          showDivider &&
+            (!itemsStyle?.bgColor || itemsStyle?.bgColor == "Transparent")
+            ? "lg:pb-0"
+            : ""
         }`}
       >
         <div class="flex-none">

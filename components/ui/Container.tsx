@@ -1,33 +1,45 @@
 import type { VNode } from "preact";
-import Header, { Content, Style as HeaderStyle } from "$store/components/ui/SectionHeader.tsx";
-import { Layout as SectionLayout, Section, layoutClasses, Colors, colorClasses, TextColors, textColorClasses, ButtonType } from "$store/components/ui/Types.tsx"
+import Header, {
+  Content,
+  Style as HeaderStyle,
+} from "$store/components/ui/SectionHeader.tsx";
+import {
+  ButtonType,
+  colorClasses,
+  Colors,
+  Layout as SectionLayout,
+  layoutClasses,
+  Section,
+  textColorClasses,
+  TextColors,
+} from "$store/components/ui/Types.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export type Layout = SectionLayout;
 export type HeaderContent = Content;
 
 export interface Style {
-    section?: Section;
-    content?: {
-      alignment?: "Center" | "Left";
-      bgColor?: Colors;
-      bgImage?: LiveImage;
-      textColor?: TextColors;
-    }
-    header?: HeaderStyle;
-    button?: ButtonType;
+  section?: Section;
+  content?: {
+    alignment?: "Center" | "Left";
+    bgColor?: Colors;
+    bgImage?: LiveImage;
+    textColor?: TextColors;
+  };
+  header?: HeaderStyle;
+  button?: ButtonType;
 }
 
 export interface ExtendedStyle {
-    section?: Section;
-    content?: {
-      alignment?: "Center" | "Left" | "Side to side top" | "Side to side middle";
-      bgColor?: Colors;
-      bgImage?: LiveImage;
-      textColor?: TextColors;
-    }
-    header?: HeaderStyle;
-    button?: ButtonType;
+  section?: Section;
+  content?: {
+    alignment?: "Center" | "Left" | "Side to side top" | "Side to side middle";
+    bgColor?: Colors;
+    bgImage?: LiveImage;
+    textColor?: TextColors;
+  };
+  header?: HeaderStyle;
+  button?: ButtonType;
 }
 
 export interface Props {
@@ -46,32 +58,44 @@ const DEFAULT_PROPS: Props = {
   children: <></>,
 };
 
-export default function Container({children, ...props}: Props) {
+export default function Container({ children, ...props }: Props) {
   const { header, layout, style, afterHeader } = { ...DEFAULT_PROPS, ...props };
-  
-  const sectionBgColor = style?.section?.bgColor || "Transparent"
-  const contentBgColor = style?.content?.bgColor || "Transparent"
-  const containerBgColorClasses = sectionBgColor ? colorClasses[sectionBgColor] : "";
-  const contentBgColorClasses = contentBgColor ? colorClasses[contentBgColor] : "";
-  
-  const hasPadding = (contentBgColor !== 'Transparent' && sectionBgColor !== contentBgColor) || style?.content?.bgImage !== undefined
+
+  const sectionBgColor = style?.section?.bgColor || "Transparent";
+  const contentBgColor = style?.content?.bgColor || "Transparent";
+  const containerBgColorClasses = sectionBgColor
+    ? colorClasses[sectionBgColor]
+    : "";
+  const contentBgColorClasses = contentBgColor
+    ? colorClasses[contentBgColor]
+    : "";
+
+  const hasPadding =
+    (contentBgColor !== "Transparent" && sectionBgColor !== contentBgColor) ||
+    style?.content?.bgImage !== undefined;
 
   const contentClasses = {
     "Center": "items-stretch",
     "Left": "",
     "Side to side top": "justify-between lg:grid lg:grid-flow-col",
-    "Side to side middle": "justify-between items-center lg:flex-row lg:flex-nowrap",
-  }
+    "Side to side middle":
+      "justify-between items-center lg:flex-row lg:flex-nowrap",
+  };
 
-  const _header = <Header content={header} style={style?.header}/>
+  const _header = <Header content={header} style={style?.header} />;
 
   return (
-    <div class={`
+    <div
+      class={`
       ${containerBgColorClasses}
       ${layoutClasses[layout?.sectionWidth || "Full bleed"]}
       ${hasPadding ? "p-4 lg:p-16" : ""}
       ${style?.section?.bgImage ? "bg-cover bg-center" : ""}`}
-      style={{ "background-image": style?.section?.bgImage ? `url(${style?.section?.bgImage})` : "" }}
+      style={{
+        "background-image": style?.section?.bgImage
+          ? `url(${style?.section?.bgImage})`
+          : "",
+      }}
     >
       <div
         class={`
@@ -84,17 +108,27 @@ export default function Container({children, ...props}: Props) {
           ${contentClasses[style?.content?.alignment || "Center"]}
           ${textColorClasses[style?.content?.textColor || "Auto"]}
         `}
-        style={{ "background-image": style?.content?.bgImage ? `url(${style?.content?.bgImage})` : "" }}
+        style={{
+          "background-image": style?.content?.bgImage
+            ? `url(${style?.content?.bgImage})`
+            : "",
+        }}
       >
-        {
-          header?.title || header?.description || afterHeader ? (
+        {header?.title || header?.description || afterHeader
+          ? (
             <div class="flex flex-col gap-6 lg:gap-10 lg:min-w-[22rem]">
-              <Header content={header} style={style?.header}/>
-              { afterHeader }
+              <Header content={header} style={style?.header} />
+              {afterHeader}
             </div>
-          ) : ""
-        }
-        <div class={`flex flex-col w-full ${style?.content?.alignment == "Center" ? "items-center" : "items-left"}`}>
+          )
+          : ""}
+        <div
+          class={`flex flex-col w-full ${
+            style?.content?.alignment == "Center"
+              ? "items-center"
+              : "items-left"
+          }`}
+        >
           {children}
         </div>
       </div>

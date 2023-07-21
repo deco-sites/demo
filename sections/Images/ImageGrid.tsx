@@ -1,7 +1,11 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Container, { HeaderContent, Layout, ExtendedStyle } from "$store/components/ui/Container.tsx"
-import { imgPh } from "$store/components/ui/Types.tsx"
+import Container, {
+  ExtendedStyle,
+  HeaderContent,
+  Layout,
+} from "$store/components/ui/Container.tsx";
+import { imgPh } from "$store/components/ui/Types.tsx";
 
 /**
  * @titleBy alt
@@ -134,8 +138,8 @@ export default function ImageGrid({
   ],
   imageSize = { width: 600, height: 300 },
 }: Props) {
-  const items = itemsLayout?.itemsPerLine
-  const radius = itemsLayout?.borderRadius
+  const items = itemsLayout?.itemsPerLine;
+  const radius = itemsLayout?.borderRadius;
 
   return (
     <Container header={header} layout={layout} style={style}>

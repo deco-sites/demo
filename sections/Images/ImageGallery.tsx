@@ -1,7 +1,11 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
-import { imgPh } from "$store/components/ui/Types.tsx"
+import Container, {
+  HeaderContent,
+  Layout,
+  Style,
+} from "$store/components/ui/Container.tsx";
+import { imgPh } from "$store/components/ui/Types.tsx";
 
 /**
  * @titleBy alt
@@ -29,7 +33,7 @@ export interface Border {
   /** @default none */
   desktop?: BorderRadius;
 }
-  
+
 export interface ItemsLayout {
   autosizeMobile?: "Asymmetric" | "Symmetrical";
   autosizeDesktop?: "Asymmetric" | "Symmetrical";
@@ -48,7 +52,7 @@ export interface DeviceSize {
   largerImage: Size;
   smallerImage: Size;
 }
-  
+
 export interface Props {
   header?: HeaderContent;
   /**
@@ -59,7 +63,7 @@ export interface Props {
   imagesSizes?: {
     mobile?: DeviceSize;
     desktop?: DeviceSize;
-  }
+  };
   layout?: Layout;
   itemsLayout?: ItemsLayout;
   style?: Style;
@@ -148,13 +152,25 @@ function Banner(
       <Picture>
         <Source
           width={props.sizeMobile ? props.sizeMobile.width : 400}
-          height={props.sizeMobile ? props.sizeMobile.height : props.type === "large" ? 400 : props.mobile == "Symmetrical" ? 400 : 220}
+          height={props.sizeMobile
+            ? props.sizeMobile.height
+            : props.type === "large"
+            ? 400
+            : props.mobile == "Symmetrical"
+            ? 400
+            : 220}
           media="(max-width: 767px)"
           src={srcMobile}
         />
         <Source
           width={props.sizeDesktop ? props.sizeDesktop.width : 640}
-          height={props.sizeDesktop ? props.sizeDesktop.height : props.type === "large" ? 640 : props.desktop == "Symmetrical" ? 640 : 400}
+          height={props.sizeDesktop
+            ? props.sizeDesktop.height
+            : props.type === "large"
+            ? 640
+            : props.desktop == "Symmetrical"
+            ? 640
+            : 400}
           media="(min-width: 768px)"
           src={srcDesktop || srcMobile}
         />
@@ -182,43 +198,45 @@ export default function Gallery(props: Props) {
         <div class="flex flex-col gap-4 w-1/2">
           {banners?.map((banner, index) => (
             <>
-              {
-                index < 2 && (
-                  <Banner
-                    {...banner}
-                    borderRadius={itemsLayout?.borderRadius}
-                    type={index % 2 == 0 ? "large" : "small"}
-                    sizeMobile={index % 2 == 0 ? imagesSizes?.mobile?.largerImage : imagesSizes?.mobile?.smallerImage}
-                    sizeDesktop={index % 2 == 0 ? imagesSizes?.desktop?.largerImage : imagesSizes?.desktop?.smallerImage}
-                    mobile={itemsLayout?.autosizeMobile || "Asymmetric"}
-                    desktop={itemsLayout?.autosizeDesktop || "Asymmetric"}
-                  />
-                )
-              }
+              {index < 2 && (
+                <Banner
+                  {...banner}
+                  borderRadius={itemsLayout?.borderRadius}
+                  type={index % 2 == 0 ? "large" : "small"}
+                  sizeMobile={index % 2 == 0
+                    ? imagesSizes?.mobile?.largerImage
+                    : imagesSizes?.mobile?.smallerImage}
+                  sizeDesktop={index % 2 == 0
+                    ? imagesSizes?.desktop?.largerImage
+                    : imagesSizes?.desktop?.smallerImage}
+                  mobile={itemsLayout?.autosizeMobile || "Asymmetric"}
+                  desktop={itemsLayout?.autosizeDesktop || "Asymmetric"}
+                />
+              )}
             </>
           ))}
         </div>
         <div class="flex flex-col gap-4 w-1/2">
           {banners?.map((banner, index) => (
             <>
-              {
-                index >= 2 && (
-
-                  <Banner
-                    {...banner}
-                    borderRadius={itemsLayout?.borderRadius}
-                    type={index % 2 != 0 ? "large" : "small"}
-                    sizeMobile={index % 2 != 0 ? imagesSizes?.mobile?.largerImage : imagesSizes?.mobile?.smallerImage}
-                    sizeDesktop={index % 2 != 0 ? imagesSizes?.desktop?.largerImage : imagesSizes?.desktop?.smallerImage}
-                    mobile={itemsLayout?.autosizeMobile || "Asymmetric"}
-                    desktop={itemsLayout?.autosizeDesktop || "Asymmetric"}
-                  />
-                )
-              }
+              {index >= 2 && (
+                <Banner
+                  {...banner}
+                  borderRadius={itemsLayout?.borderRadius}
+                  type={index % 2 != 0 ? "large" : "small"}
+                  sizeMobile={index % 2 != 0
+                    ? imagesSizes?.mobile?.largerImage
+                    : imagesSizes?.mobile?.smallerImage}
+                  sizeDesktop={index % 2 != 0
+                    ? imagesSizes?.desktop?.largerImage
+                    : imagesSizes?.desktop?.smallerImage}
+                  mobile={itemsLayout?.autosizeMobile || "Asymmetric"}
+                  desktop={itemsLayout?.autosizeDesktop || "Asymmetric"}
+                />
+              )}
             </>
           ))}
         </div>
-
       </div>
     </Container>
   );

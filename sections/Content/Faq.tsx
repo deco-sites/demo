@@ -1,5 +1,9 @@
-import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
-import { getButtonClasses } from "$store/components/ui/Types.tsx"
+import Container, {
+  HeaderContent,
+  Layout,
+  Style,
+} from "$store/components/ui/Container.tsx";
+import { getButtonClasses } from "$store/components/ui/Types.tsx";
 
 export interface Question {
   question: string;
@@ -35,24 +39,29 @@ const DEFAULT_PROPS = {
   questions: [
     {
       "question": "How can I track my order?",
-      "answer": "Tracking your order is easy! Once your order is shipped, we will send a confirmation email with a tracking number. Simply click on the tracking number or visit our website and enter the tracking number in the designated section to get real-time updates on the location and delivery status of your order."
+      "answer":
+        "Tracking your order is easy! Once your order is shipped, we will send a confirmation email with a tracking number. Simply click on the tracking number or visit our website and enter the tracking number in the designated section to get real-time updates on the location and delivery status of your order.",
     },
     {
       "question": "What is the return policy?",
-      "answer": "We offer a hassle-free return policy. If you are not completely satisfied with your purchase, you can return the item within 30 days of delivery for a full refund or exchange. Please ensure that the item is unused, in its original packaging, and accompanied by the receipt. Contact our customer service team, and they will guide you through the return process."
+      "answer":
+        "We offer a hassle-free return policy. If you are not completely satisfied with your purchase, you can return the item within 30 days of delivery for a full refund or exchange. Please ensure that the item is unused, in its original packaging, and accompanied by the receipt. Contact our customer service team, and they will guide you through the return process.",
     },
     {
       "question": "What payment methods are accepted?",
-      "answer": "We accept various payment methods, including credit cards, debit cards, and bank transfers. When checking out, you can choose the payment option that best suits your preferences. We ensure that all transactions are secure and protected."
+      "answer":
+        "We accept various payment methods, including credit cards, debit cards, and bank transfers. When checking out, you can choose the payment option that best suits your preferences. We ensure that all transactions are secure and protected.",
     },
     {
       "question": "How long does it take for my order to be delivered?",
-      "answer": "The delivery time depends on your location. Generally, the estimated delivery timeframe is 5 to 10 business days after payment confirmation. However, this timeframe may vary due to unforeseen circumstances. After your order is shipped, we will send an email with tracking information so you can monitor the delivery."
+      "answer":
+        "The delivery time depends on your location. Generally, the estimated delivery timeframe is 5 to 10 business days after payment confirmation. However, this timeframe may vary due to unforeseen circumstances. After your order is shipped, we will send an email with tracking information so you can monitor the delivery.",
     },
     {
       "question": "Do you offer free shipping?",
-      "answer": "Yes, we offer free shipping for orders above a certain value. The minimum value to qualify for free shipping may vary, so please check the current conditions on our website. If your order meets the requirements, the shipping cost will be automatically adjusted to zero during the checkout process."
-    }
+      "answer":
+        "Yes, we offer free shipping for orders above a certain value. The minimum value to qualify for free shipping may vary, so please check the current conditions on our website. If your order meets the requirements, the shipping cost will be automatically adjusted to zero during the checkout process.",
+    },
   ],
 };
 
@@ -83,7 +92,11 @@ function Contact({ title, description, link, button }: Contact & Style) {
         )}
       </div>
       {link &&
-        <a href={link.href} class={getButtonClasses(button || {})}>{link.text}</a>}
+        (
+          <a href={link.href} class={getButtonClasses(button || {})}>
+            {link.text}
+          </a>
+        )}
     </div>
   );
 }
@@ -101,13 +114,22 @@ export default function FAQ(props: Props) {
   const variation = itemsLayout?.variation || "Rows";
 
   return (
-    <Container header={header} layout={layout} style={style} afterHeader={variation !== "Rows" && <Contact {...{...contact, ...style}} />}>
-      <div class={`flex gap-4 lg:gap-8 ${variation === "Rows" ? "flex-col" : ""}`}>
+    <Container
+      header={header}
+      layout={layout}
+      style={style}
+      afterHeader={variation !== "Rows" && (
+        <Contact {...{ ...contact, ...style }} />
+      )}
+    >
+      <div
+        class={`flex gap-4 lg:gap-8 ${variation === "Rows" ? "flex-col" : ""}`}
+      >
         <div class="join join-vertical w-full rounded-none">
           {questions.map((question) => <Question {...question} />)}
         </div>
 
-        {variation === "Rows" && (<Contact {...{...contact, ...style}} />)}
+        {variation === "Rows" && <Contact {...{ ...contact, ...style }} />}
       </div>
     </Container>
   );

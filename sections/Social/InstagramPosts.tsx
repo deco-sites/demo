@@ -1,6 +1,9 @@
 import type { SectionProps } from "$live/mod.ts";
 import Image from "deco-sites/std/components/Image.tsx";
-import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
+import Header, {
+  Content as HeaderContent,
+  Layout as HeaderLayout,
+} from "$store/components/ui/SectionHeader.tsx";
 
 export interface layout {
   header?: HeaderLayout;

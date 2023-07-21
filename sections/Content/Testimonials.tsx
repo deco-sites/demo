@@ -3,9 +3,13 @@ import Image from "deco-sites/std/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
-import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
+import Container, {
+  ExtendedStyle as Style,
+  HeaderContent,
+  Layout,
+} from "$store/components/ui/Container.tsx";
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
-import { ButtonColor, buttonClasses } from "$store/components/ui/Types.tsx"
+import { buttonClasses, ButtonColor } from "$store/components/ui/Types.tsx";
 
 export interface Testimonial {
   text?: string;
@@ -32,7 +36,7 @@ export interface Props {
   sliderStyle?: {
     controlsColor?: ButtonColor;
     controlsOutline?: boolean;
-  }
+  };
 }
 
 const DEFAULT_PROPS: Props = {
@@ -135,9 +139,11 @@ export default function Testimonials(
     ...props,
   };
 
-  const variation = itemsLayout?.variation || "Grid"
-  const controlsClasses = `${buttonClasses[sliderStyle?.controlsColor || "Default"]} ${sliderStyle?.controlsOutline ? "btn-outline" : ""}`
-  
+  const variation = itemsLayout?.variation || "Grid";
+  const controlsClasses = `${
+    buttonClasses[sliderStyle?.controlsColor || "Default"]
+  } ${sliderStyle?.controlsOutline ? "btn-outline" : ""}`;
+
   return (
     <Container header={header} layout={layout} style={style}>
       <>
@@ -164,12 +170,16 @@ export default function Testimonials(
               </Slider>
               <>
                 <div class="z-10 absolute -left-3 lg:-left-8 top-1/3">
-                  <Slider.PrevButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+                  <Slider.PrevButton
+                    class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}
+                  >
                     <Icon size={24} id="ChevronLeft" />
                   </Slider.PrevButton>
                 </div>
                 <div class="z-10 absolute -right-3 lg:-right-8 top-1/3">
-                  <Slider.NextButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+                  <Slider.NextButton
+                    class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}
+                  >
                     <Icon size={24} id="ChevronRight" />
                   </Slider.NextButton>
                 </div>

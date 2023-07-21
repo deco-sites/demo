@@ -10,8 +10,11 @@ import Divider from "$store/components/footer/Divider.tsx";
 import BackToTop from "$store/components/footer/BackToTop.tsx";
 import PoweredByDeco from "deco-sites/std/components/PoweredByDeco.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Container, { Layout, Style } from "$store/components/ui/SimpleContainer.tsx"
-import { lineColorClasses } from "$store/components/ui/Types.tsx"
+import Container, {
+  Layout,
+  Style,
+} from "$store/components/ui/SimpleContainer.tsx";
+import { lineColorClasses } from "$store/components/ui/Types.tsx";
 
 export type Item = {
   label: string;
@@ -121,35 +124,35 @@ function Footer({
       "items": [
         {
           "href": "/about-us",
-          "label": "About Us"
+          "label": "About Us",
         },
         {
           "href": "/terms-of-use",
-          "label": "Terms of Use"
+          "label": "Terms of Use",
         },
         {
           "href": "/careers",
-          "label": "Careers"
-        }
-      ]
+          "label": "Careers",
+        },
+      ],
     },
     {
       "label": "Customer Service",
       "items": [
         {
           "href": "/customer-support",
-          "label": "Customer Support"
+          "label": "Customer Support",
         },
         {
           "href": "/whatsapp",
-          "label": "Contact Us via WhatsApp"
+          "label": "Contact Us via WhatsApp",
         },
         {
           "href": "/exchange-and-returns",
-          "label": "Exchange and Returns"
-        }
-      ]
-    }
+          "label": "Exchange and Returns",
+        },
+      ],
+    },
   ],
   social = {
     title: "Social links",
@@ -184,7 +187,8 @@ function Footer({
   const _newsletter = layoutOptions?.hide?.newsletter ? <></> : (
     <Newsletter
       content={newsletter}
-      tiled={layoutOptions?.variation == "Variation 4" || layoutOptions?.variation == "Variation 5"}
+      tiled={layoutOptions?.variation == "Variation 4" ||
+        layoutOptions?.variation == "Variation 5"}
       btnStyle={style?.button}
     />
   );
@@ -192,12 +196,15 @@ function Footer({
     <FooterItems
       sections={sections}
       justify={layoutOptions?.variation == "Variation 2" ||
-      layoutOptions?.variation == "Variation 3"}
+        layoutOptions?.variation == "Variation 3"}
     />
   );
-  const _social = layoutOptions?.hide?.socialLinks
-    ? <></>
-    : <Social content={social} vertical={layoutOptions?.variation == "Variation 3"} />;
+  const _social = layoutOptions?.hide?.socialLinks ? <></> : (
+    <Social
+      content={social}
+      vertical={layoutOptions?.variation == "Variation 3"}
+    />
+  );
   const _payments = layoutOptions?.hide?.paymentMethods
     ? <></>
     : <PaymentMethods content={payments} />;
@@ -210,13 +217,16 @@ function Footer({
   const _links = layoutOptions?.hide?.extraLinks
     ? <></>
     : <ExtraLinks content={extraLinks} />;
-  const _divider = <Divider color={lineColorClasses[style?.content?.textColor || "Auto"]} />
+  const _divider = (
+    <Divider color={lineColorClasses[style?.content?.textColor || "Auto"]} />
+  );
 
   return (
     <Container layout={layout} style={style}>
       <>
         <footer class="lg:container lg:mx-auto">
-          {(!layoutOptions?.variation || layoutOptions?.variation == "Variation 1") && (
+          {(!layoutOptions?.variation ||
+            layoutOptions?.variation == "Variation 1") && (
             <div class="flex flex-col gap-10">
               <div class="flex flex-col md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
                 {_logo}

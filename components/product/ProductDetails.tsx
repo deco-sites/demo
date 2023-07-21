@@ -142,7 +142,11 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           {description && (
             <details>
               <summary class="cursor-pointer">Descrição</summary>
-              <div class="ml-2 mt-2" dangerouslySetInnerHTML={{ __html: description }}></div>
+              <div
+                class="ml-2 mt-2"
+                dangerouslySetInnerHTML={{ __html: description }}
+              >
+              </div>
             </details>
           )}
         </span>

@@ -1,5 +1,5 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import { imgPh } from "$store/components/ui/Types.tsx"
+import { imgPh } from "$store/components/ui/Types.tsx";
 
 export interface Props {
   logo?: {
