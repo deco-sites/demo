@@ -9457,15 +9457,40 @@
       "required": [],
       "title": "MobileApps"
     },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@RegionOptions": {
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL1JlZ2lvblNlbGVjdG9yLnRzeA==@Item": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "Item"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL1JlZ2lvblNlbGVjdG9yLnRzeA==@Item[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL1JlZ2lvblNlbGVjdG9yLnRzeA==@Item"
+      },
+      "title": "Item[]"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL1JlZ2lvblNlbGVjdG9yLnRzeA==@RegionOptions": {
       "type": "object",
       "properties": {
         "currency": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL1JlZ2lvblNlbGVjdG9yLnRzeA==@Item[]",
           "title": "Currency"
         },
         "language": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL1JlZ2lvblNlbGVjdG9yLnRzeA==@Item[]",
           "title": "Language"
         }
       },
@@ -9780,7 +9805,7 @@
           "title": "Mobile Apps"
         },
         "regionOptions": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@RegionOptions",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL1JlZ2lvblNlbGVjdG9yLnRzeA==@RegionOptions",
           "title": "Region Options"
         },
         "extraLinks": {
@@ -9817,46 +9842,18 @@
       "required": [],
       "title": "deco-sites/demo/components/footer/Footer.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps": {
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0FsZXJ0cy50c3g=@Alert": {
       "type": "object",
       "properties": {
-        "placeholder": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Placeholder",
-          "description": "Search bar default placeholder message",
-          "default": "What are you looking for?"
-        },
-        "action": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Page path",
-          "description": "When user clicks on the search button, navigate it to",
-          "default": "/s"
-        },
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Term name",
-          "description": "Querystring param used when navigating the user",
-          "default": "q"
-        },
-        "query": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Query"
+        "text": {
+          "type": "string",
+          "title": "Text"
         }
       },
-      "required": [],
-      "title": "EditableProps"
+      "required": [
+        "text"
+      ],
+      "title": "Alert"
     },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem": {
       "type": "object",
@@ -9943,25 +9940,412 @@
       },
       "title": "NavItem[]"
     },
-    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props": {
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItems": {
       "type": "object",
       "properties": {
-        "alerts": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Alerts"
-        },
-        "searchbar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
-          "title": "Search Bar"
-        },
         "navItems": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
           "title": "Navigation items",
-          "description": "Navigation items used both on mobile and desktop menus"
+          "description": "Shown on mobile and desktop menus"
+        }
+      },
+      "required": [],
+      "title": "NavItems"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@IconItem": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "ArrowsPointingOut",
+              "default": "ArrowsPointingOut"
+            },
+            {
+              "type": "string",
+              "const": "Bars3",
+              "default": "Bars3"
+            },
+            {
+              "type": "string",
+              "const": "ChevronLeft",
+              "default": "ChevronLeft"
+            },
+            {
+              "type": "string",
+              "const": "ChevronRight",
+              "default": "ChevronRight"
+            },
+            {
+              "type": "string",
+              "const": "ChevronUp",
+              "default": "ChevronUp"
+            },
+            {
+              "type": "string",
+              "const": "ChevronDown",
+              "default": "ChevronDown"
+            },
+            {
+              "type": "string",
+              "const": "CreditCard",
+              "default": "CreditCard"
+            },
+            {
+              "type": "string",
+              "const": "Deco",
+              "default": "Deco"
+            },
+            {
+              "type": "string",
+              "const": "Diners",
+              "default": "Diners"
+            },
+            {
+              "type": "string",
+              "const": "Discord",
+              "default": "Discord"
+            },
+            {
+              "type": "string",
+              "const": "Discount",
+              "default": "Discount"
+            },
+            {
+              "type": "string",
+              "const": "Elo",
+              "default": "Elo"
+            },
+            {
+              "type": "string",
+              "const": "Facebook",
+              "default": "Facebook"
+            },
+            {
+              "type": "string",
+              "const": "FilterList",
+              "default": "FilterList"
+            },
+            {
+              "type": "string",
+              "const": "Heart",
+              "default": "Heart"
+            },
+            {
+              "type": "string",
+              "const": "Instagram",
+              "default": "Instagram"
+            },
+            {
+              "type": "string",
+              "const": "Linkedin",
+              "default": "Linkedin"
+            },
+            {
+              "type": "string",
+              "const": "Minus",
+              "default": "Minus"
+            },
+            {
+              "type": "string",
+              "const": "MapPin",
+              "default": "MapPin"
+            },
+            {
+              "type": "string",
+              "const": "MagnifyingGlass",
+              "default": "MagnifyingGlass"
+            },
+            {
+              "type": "string",
+              "const": "Mastercard",
+              "default": "Mastercard"
+            },
+            {
+              "type": "string",
+              "const": "Message",
+              "default": "Message"
+            },
+            {
+              "type": "string",
+              "const": "Phone",
+              "default": "Phone"
+            },
+            {
+              "type": "string",
+              "const": "Pix",
+              "default": "Pix"
+            },
+            {
+              "type": "string",
+              "const": "Plus",
+              "default": "Plus"
+            },
+            {
+              "type": "string",
+              "const": "QuestionMarkCircle",
+              "default": "QuestionMarkCircle"
+            },
+            {
+              "type": "string",
+              "const": "Return",
+              "default": "Return"
+            },
+            {
+              "type": "string",
+              "const": "Ruler",
+              "default": "Ruler"
+            },
+            {
+              "type": "string",
+              "const": "ShoppingCart",
+              "default": "ShoppingCart"
+            },
+            {
+              "type": "string",
+              "const": "Star",
+              "default": "Star"
+            },
+            {
+              "type": "string",
+              "const": "Tiktok",
+              "default": "Tiktok"
+            },
+            {
+              "type": "string",
+              "const": "Trash",
+              "default": "Trash"
+            },
+            {
+              "type": "string",
+              "const": "Truck",
+              "default": "Truck"
+            },
+            {
+              "type": "string",
+              "const": "Twitter",
+              "default": "Twitter"
+            },
+            {
+              "type": "string",
+              "const": "User",
+              "default": "User"
+            },
+            {
+              "type": "string",
+              "const": "Visa",
+              "default": "Visa"
+            },
+            {
+              "type": "string",
+              "const": "WhatsApp",
+              "default": "WhatsApp"
+            },
+            {
+              "type": "string",
+              "const": "XMark",
+              "default": "XMark"
+            },
+            {
+              "type": "string",
+              "const": "Zoom",
+              "default": "Zoom"
+            }
+          ],
+          "type": "string",
+          "title": "Icon"
         },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "icon",
+        "label",
+        "href"
+      ],
+      "title": "IconItem"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@Button": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@ButtonType",
+          "title": "Style"
+        }
+      },
+      "required": [
+        "label",
+        "href",
+        "style"
+      ],
+      "title": "Button"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@AdditionalProps": {
+      "type": "object",
+      "properties": {
+        "saleLink": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Label"
+            },
+            "href": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Href"
+            },
+            "color": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Auto",
+                  "default": "Auto"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Color"
+            }
+          },
+          "required": [],
+          "title": "Sale Link"
+        },
+        "extraIcons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@IconItem"
+          },
+          "title": "Extra Icons"
+        },
+        "regionOptions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvZm9vdGVyL1JlZ2lvblNlbGVjdG9yLnRzeA==@RegionOptions",
+          "title": "Region Options"
+        },
+        "buttons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@Button"
+          },
+          "title": "Buttons"
+        },
+        "hide": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Language"
+            }
+          },
+          "required": [],
+          "title": "Hide"
+        }
+      },
+      "required": [],
+      "title": "AdditionalProps"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@AdditionalProps&NavItems": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItems"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@AdditionalProps"
+        }
+      ],
+      "title": "AdditionalProps&NavItems"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps": {
+      "type": "object",
+      "properties": {
+        "placeholder": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Placeholder",
+          "description": "Search bar default placeholder message",
+          "default": "What are you looking for?"
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Page path",
+          "description": "When user clicks on the search button, navigate it to",
+          "default": "/s"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Term name",
+          "description": "Querystring param used when navigating the user",
+          "default": "q"
+        },
+        "query": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Query"
+        }
+      },
+      "required": [],
+      "title": "EditableProps"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Search": {
+      "type": "object",
+      "properties": {
         "products": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
           "title": "Product suggestions",
@@ -9970,6 +10354,308 @@
         "suggestions": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
           "title": "Enable Top Search terms"
+        }
+      },
+      "required": [],
+      "title": "Search"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps&Search": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Search"
+        }
+      ],
+      "title": "EditableProps&Search"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Layout": {
+      "type": "object",
+      "properties": {
+        "alertWidth": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Full",
+              "default": "Full"
+            },
+            {
+              "type": "string",
+              "const": "Full bleed",
+              "default": "Full bleed"
+            }
+          ],
+          "type": "string",
+          "title": "Alert Width"
+        },
+        "navBarWidth": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Full bleed",
+              "default": "Full bleed"
+            },
+            {
+              "type": "string",
+              "const": "Full",
+              "default": "Full"
+            }
+          ],
+          "type": "string",
+          "title": "Nav Bar Width"
+        },
+        "navBarVariation": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Variation 1: One line",
+              "default": "Variation 1: One line"
+            },
+            {
+              "type": "string",
+              "const": "Variation 2: One line",
+              "default": "Variation 2: One line"
+            },
+            {
+              "type": "string",
+              "const": "Variation 3: One line",
+              "default": "Variation 3: One line"
+            },
+            {
+              "type": "string",
+              "const": "Variation 4: One line",
+              "default": "Variation 4: One line"
+            },
+            {
+              "type": "string",
+              "const": "Variation 5: Two lines",
+              "default": "Variation 5: Two lines"
+            },
+            {
+              "type": "string",
+              "const": "Variation 6: Two lines",
+              "default": "Variation 6: Two lines"
+            },
+            {
+              "type": "string",
+              "const": "Variation 7: Two lines",
+              "default": "Variation 7: Two lines"
+            },
+            {
+              "type": "string",
+              "const": "Variation 8: Two lines",
+              "default": "Variation 8: Two lines"
+            },
+            {
+              "type": "string",
+              "const": "Variation 9: Two lines",
+              "default": "Variation 9: Two lines"
+            }
+          ],
+          "type": "string",
+          "title": "Nav Bar Variation"
+        }
+      },
+      "required": [],
+      "title": "Layout"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@Style": {
+      "type": "object",
+      "properties": {
+        "bgColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Transparent",
+              "default": "Transparent"
+            },
+            {
+              "type": "string",
+              "const": "Backdrop opacity",
+              "default": "Backdrop opacity"
+            },
+            {
+              "type": "string",
+              "const": "Primary",
+              "default": "Primary"
+            },
+            {
+              "type": "string",
+              "const": "Secondary",
+              "default": "Secondary"
+            },
+            {
+              "type": "string",
+              "const": "Tertiary",
+              "default": "Tertiary"
+            },
+            {
+              "type": "string",
+              "const": "Base",
+              "default": "Base"
+            },
+            {
+              "type": "string",
+              "const": "Base inverted",
+              "default": "Base inverted"
+            }
+          ],
+          "type": "string",
+          "title": "Bg Color"
+        },
+        "bgImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Bg Image"
+        },
+        "textColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Auto",
+              "default": "Auto"
+            },
+            {
+              "type": "string",
+              "const": "Primary",
+              "default": "Primary"
+            },
+            {
+              "type": "string",
+              "const": "Secondary",
+              "default": "Secondary"
+            },
+            {
+              "type": "string",
+              "const": "Tertiary",
+              "default": "Tertiary"
+            },
+            {
+              "type": "string",
+              "const": "Base",
+              "default": "Base"
+            },
+            {
+              "type": "string",
+              "const": "Base inverted",
+              "default": "Base inverted"
+            }
+          ],
+          "type": "string",
+          "title": "Text Color"
+        }
+      },
+      "required": [],
+      "title": "Style"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Style": {
+      "type": "object",
+      "properties": {
+        "alert": {
+          "type": "object",
+          "properties": {
+            "bgColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Transparent",
+                  "default": "Transparent"
+                },
+                {
+                  "type": "string",
+                  "const": "Backdrop opacity",
+                  "default": "Backdrop opacity"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Bg Color"
+            },
+            "bgImage": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Bg Image"
+            },
+            "textColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Auto",
+                  "default": "Auto"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Text Color"
+            }
+          },
+          "required": [],
+          "title": "Alert"
+        },
+        "navBar": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@Style",
+          "title": "Nav Bar"
+        }
+      },
+      "required": [],
+      "title": "Style"
+    },
+    "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "alerts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0FsZXJ0cy50c3g=@Alert"
+          },
+          "title": "Alerts"
         },
         "logo": {
           "type": "object",
@@ -9988,11 +10674,25 @@
             "alt"
           ],
           "title": "Logo"
+        },
+        "navBar": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@AdditionalProps&NavItems",
+          "title": "Nav Bar"
+        },
+        "searchbar": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps&Search",
+          "title": "Search"
+        },
+        "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Layout",
+          "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Style",
+          "title": "Style"
         }
       },
-      "required": [
-        "alerts"
-      ],
+      "required": [],
       "title": "deco-sites/demo/components/header/Header.tsx@Props"
     },
     "ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {

@@ -37,7 +37,7 @@ export default function Container({children, ...props}: Props) {
   return (
     <div class={`
       ${containerBgColorClasses}
-      ${layoutClasses[layout?.sectionWidth || "Container"]}
+      ${layoutClasses[layout?.sectionWidth || "Full"]}
       ${hasPadding ? "p-4 lg:p-16" : ""}
       ${style?.section?.bgImage ? "bg-cover bg-center" : ""}`}
       style={{ "background-image": style?.section?.bgImage ? `url(${style?.section?.bgImage})` : "" }}
@@ -46,7 +46,7 @@ export default function Container({children, ...props}: Props) {
         class={`
           gap-6 lg:gap-12
           ${hasPadding ? "p-4 lg:p-10" : "px-4 py-8 lg:p-16"}
-          ${layoutClasses[layout?.contentWidth || "Container"]}
+          ${layoutClasses[layout?.contentWidth || "Full"]}
           ${contentBgColorClasses}
           ${style?.content?.bgImage ? "bg-cover bg-center" : ""}
           ${textColorClasses[style?.content?.textColor || "Auto"]}

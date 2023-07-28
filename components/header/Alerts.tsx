@@ -2,8 +2,14 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
 
+export interface Alert {
+  /** @format textarea */
+  /** @title Text */
+  text: string;
+}
+
 export interface Props {
-  alerts: string[];
+  alerts: Array<Alert>;
   /**
    * @title Autoplay interval
    * @description time (in seconds) to start the carousel autoplay
@@ -11,7 +17,7 @@ export interface Props {
   interval?: number;
 }
 
-function Alert({ alerts = [], interval = 5 }: Props) {
+export function Alerts({ alerts = [], interval = 5 }: Props) {
   const id = useId();
 
   return (
@@ -20,7 +26,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
         {alerts.map((alert, index) => (
           <Slider.Item index={index} class="carousel-item">
             <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
-              {alert}
+              {alert.text}
             </span>
           </Slider.Item>
         ))}
@@ -30,5 +36,3 @@ function Alert({ alerts = [], interval = 5 }: Props) {
     </div>
   );
 }
-
-export default Alert;

@@ -5,7 +5,7 @@ import Social from "$store/components/footer/Social.tsx";
 import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
 import MobileApps from "$store/components/footer/MobileApps.tsx";
 import ExtraLinks from "$store/components/footer/ExtraLinks.tsx";
-import RegionSelector from "$store/components/footer/RegionSelector.tsx";
+import RegionSelector, { RegionOptions } from "$store/components/footer/RegionSelector.tsx";
 import Divider from "$store/components/footer/Divider.tsx";
 import BackToTop from "$store/components/footer/BackToTop.tsx";
 import PoweredByDeco from "deco-sites/std/components/PoweredByDeco.tsx";
@@ -43,11 +43,6 @@ export interface MobileApps {
   apple?: string;
   /** @description Link to the app */
   android?: string;
-}
-
-export interface RegionOptions {
-  currency?: Item[];
-  language?: Item[];
 }
 
 export interface NewsletterForm {
