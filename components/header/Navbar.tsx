@@ -11,6 +11,7 @@ import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import { TextColors } from "$store/components/ui/Types.tsx"
 import RegionSelector, { RegionOptions } from "$store/components/footer/RegionSelector.tsx";
 import { Colors, ButtonType, colorClasses, getButtonClasses, textColorClasses, layoutClasses } from "$store/components/ui/Types.tsx"
+import { hidden } from "https://deno.land/std@0.140.0/fmt/colors.ts";
 
 export interface IconItem {
   icon: AvailableIcons;
@@ -49,9 +50,6 @@ export interface AdditionalProps {
   extraIcons?: Array<IconItem>;
   regionOptions?: RegionOptions;
   buttons?: Array<Button>;
-  hide?: {
-    language?: boolean;
-  }
 }
 
 export interface Style {
@@ -63,7 +61,10 @@ export interface Style {
 export interface Layout {
   navBarWidth?: Width;
   navBarVariation?: Variations;
-  searchVariation?: "Icon" | "Field";
+  searchMode?:
+    "Click on icon shows small field"
+    | "Click on icon shows LARGE field"
+    | "Hide icon and always show small field"
 }
 
 export interface Props {
@@ -88,22 +89,28 @@ export default function Navbar({
   style,
   layout,
 }: Props & AdditionalProps) {
+  const searchMode = [
+    "Click on icon shows small field",
+    "Click on icon shows LARGE field",
+    "Hide icon and always show small field",
+  ]
+
   const _logo = (
-    <div class="flex-none w-44">
+    <>
       {logo && (
         <a
           href="/"
           aria-label="Store logo"
-          class="flex items-center w-[160px]"
+          class="flex items-center py-4 px-3"
         >
           <Image src={logo.src} alt={logo.alt} width={126} height={16} />
         </a>
       )}
-    </div>
+    </>
   )
 
   const _navItems = (
-    <ul class="flex justify-center">
+    <ul class="flex">
       {items.map((item) => <NavItem item={item} />)}
       {saleLink && (
         <li class="group flex items-center">
@@ -142,7 +149,7 @@ export default function Navbar({
   const _icons = (
     <div class="flex-none flex items-center justify-end gap-2">
       {
-        (!layout?.searchVariation || layout?.searchVariation == "Icon") && (
+        (layout?.searchMode !== searchMode[2]) && (
           <>
             <Buttons variant="search" />
             <Searchbar searchbar={searchbar} />
@@ -163,11 +170,11 @@ export default function Navbar({
   const _search_field = (
     <>
       {
-        layout?.searchVariation == "Field" && (
-          <>
+        (layout?.searchMode !== searchMode[1]) && (
+          <div class="py-2">
             <Searchbar searchbar={searchbar} hideField={true} />
             <SearchField/>
-          </>
+          </div>
         )
       }
     </>
@@ -189,6 +196,7 @@ export default function Navbar({
     )
   )
 
+
   const bgColor = style?.bgColor || "Transparent";
   const bgColorClasses = bgColor ? colorClasses[bgColor] : "";
   const l = layout?.navBarVariation || "Variation 1: One line";
@@ -199,7 +207,7 @@ export default function Navbar({
       {/* Desktop Version */}
       <div
         class={`
-          hidden md:block border-b border-base-200 w-full px-3
+          hidden lg:block border-b border-base-200 w-full px-3
           ${bgColorClasses}
           ${textColorClasses[style?.textColor || "Auto"]}
           ${style?.bgImage ? "bg-cover bg-center" : ""}
@@ -209,13 +217,17 @@ export default function Navbar({
         {
           l === "Variation 1: One line" && (
             <div class={`${width} flex justify-between items-center gap-3`}>
-              {_navItems}
-              <div class="flex-auto flex justify-center">
+              <div class="flex-auto w-1/2">
+                {_navItems}
+              </div>
+              <div class="flex-none flex justify-center">
                 {_logo}
               </div>
-              {_icons}
-              {_region}
-              {_buttons}
+              <div class="flex-auto flex w-1/2 justify-end gap-3">
+                {_icons}
+                {_region}
+                {_buttons}
+              </div>
             </div>
           )
         }
@@ -237,10 +249,11 @@ export default function Navbar({
 {
           l === "Variation 3: One line" && (
             <div class={`${width} flex justify-between items-center gap-3`}>
-              <div class="flex-auto flex items-center">
+              <div class="flex-auto flex items-center gap-6">
                 {_logo}
                 {_navItems}
               </div>
+              {_search_field}
               {_icons}
               {_region}
               {_buttons}
@@ -251,15 +264,17 @@ export default function Navbar({
         {
           l === "Variation 4: One line" && (
             <div class={`${width} flex justify-between items-center gap-3 min-h-12`}>
-              <div class="flex-auto flex items-center">
+              <div class="flex-auto w-1/2">
                 {_logo}
               </div>
-              <div>
+              <div class="flex-none">
                 {_search_field}
               </div>
-              {_icons}
-              {_region}
-              {_buttons}
+              <div class="flex-auto flex w-1/2 justify-end gap-3">
+                {_icons}
+                {_region}
+                {_buttons}
+              </div>
             </div>
           )
         }
@@ -271,6 +286,7 @@ export default function Navbar({
                 <div class="flex-auto flex items-center">
                   {_logo}
                 </div>
+                {_search_field}
                 {_icons}
                 {_region}
                 {_buttons}
@@ -281,12 +297,104 @@ export default function Navbar({
             </div>
           )
         }
+
+        {
+          l === "Variation 6: Two lines" && (
+            <div class={`${width} flex flex-col`}>
+              <div class="flex justify-between items-center gap-3 min-h-12">
+                <div class="flex-auto w-1/2">
+                  {_search_field}
+                </div>
+                <div class="flex-none flex justify-center">
+                  {_logo}
+                </div>
+                <div class="flex-auto flex w-1/2 justify-end gap-3">
+                  {_icons}
+                  {_region}
+                  {_buttons}
+                </div>
+              </div>
+              <div class="flex items-center justify-center gap-3">
+                {_navItems}
+              </div>
+            </div>
+          )
+        }
+
+{
+          l === "Variation 7: Two lines" && (
+            <div class={`${width} flex flex-col`}>
+              <div class="flex justify-between items-center gap-3 min-h-12">
+                <div class="flex-auto w-1/2">
+                  {_navItems}
+                </div>
+                <div class="flex-none flex justify-center">
+                  {_logo}
+                </div>
+                <div class="flex-auto flex w-1/2 justify-end gap-3">
+                  {_icons}
+                  {_region}
+                  {_buttons}
+                </div>
+              </div>
+              <div class="flex items-center justify-center gap-3">
+                {_search_field}
+              </div>
+            </div>
+          )
+        }
+
+        {
+          l === "Variation 8: Two lines" && (
+            <div class={`${width} flex flex-col`}>
+              <div class="flex items-center justify-center gap-3">
+                {_logo}
+              </div>
+              <div class="flex justify-between items-center gap-3 min-h-12">
+                <div class="flex-auto flex w-1/2">
+                  {_search_field}
+                </div>
+                <div class="flex-none">
+                  {_navItems}
+                </div>
+                <div class="flex-auto flex w-1/2 justify-end gap-3">
+                  {_icons}
+                  {_region}
+                  {_buttons}
+                </div>
+              </div>
+            </div>
+          )
+        }
+
+        {
+          l === "Variation 9: Two lines" && (
+            <div class={`${width} flex flex-col`}>
+              <div class="flex items-center justify-center gap-3">
+                {_logo}
+              </div>
+              <div class="flex justify-between items-center gap-3 min-h-12">
+                <div class="flex-auto w-1/2">
+                  {_navItems}
+                </div>
+                <div class="flex-none flex justify-center">
+                  {_search_field}
+                </div>
+                <div class="flex-auto flex w-1/2 justify-end gap-3">
+                  {_icons}
+                  {_region}
+                  {_buttons}
+                </div>
+              </div>
+            </div>
+          )
+        }
       </div>
 
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
+        class="lg:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
       >
         <Buttons variant="menu" />
 

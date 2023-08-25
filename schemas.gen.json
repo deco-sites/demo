@@ -10273,20 +10273,6 @@
             "$ref": "#/definitions/ZGVjby1zaXRlcy9kZW1vL2NvbXBvbmVudHMvaGVhZGVyL05hdmJhci50c3g=@Button"
           },
           "title": "Buttons"
-        },
-        "hide": {
-          "type": "object",
-          "properties": {
-            "language": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Language"
-            }
-          },
-          "required": [],
-          "title": "Hide"
         }
       },
       "required": [],
@@ -10464,21 +10450,26 @@
           "type": "string",
           "title": "Nav Bar Variation"
         },
-        "searchVariation": {
+        "searchMode": {
           "anyOf": [
             {
               "type": "string",
-              "const": "Icon",
-              "default": "Icon"
+              "const": "Click on icon shows small field",
+              "default": "Click on icon shows small field"
             },
             {
               "type": "string",
-              "const": "Field",
-              "default": "Field"
+              "const": "Click on icon shows LARGE field",
+              "default": "Click on icon shows LARGE field"
+            },
+            {
+              "type": "string",
+              "const": "Hide icon and always show small field",
+              "default": "Hide icon and always show small field"
             }
           ],
           "type": "string",
-          "title": "Search Variation"
+          "title": "Search Mode"
         }
       },
       "required": [],
