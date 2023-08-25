@@ -60,7 +60,22 @@ export interface EditableProps {
 
 export type Props = EditableProps & {
   variant?: "desktop" | "mobile";
+  hideField?: boolean;
 };
+
+export function SearchField() {
+  <form class="relative text-base-content">
+    <input
+        class="input input-bordered input-sm w-60 pl-9"
+    />
+    <div class="absolute left-2 top-0 flex h-8 items-center text-base-300">
+    <Icon
+        id="MagnifyingGlass"
+        size={20}
+    />
+    </div>
+  </form>
+}
 
 function Searchbar({
   placeholder = "What are you looking for?",
@@ -68,6 +83,7 @@ function Searchbar({
   name = "q",
   query,
   variant = "mobile",
+  hideField = false,
 }: Props) {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const { setSearch, suggestions, loading } = useAutocomplete();
@@ -85,66 +101,70 @@ function Searchbar({
 
   return (
     <div class="flex flex-col p-4 md:py-6 md:px-20">
-      <div class="flex items-center gap-4">
-        <form
-          id="searchbar"
-          action={action}
-          class="flex-grow flex gap-3 px-3 py-2 border border-base-200"
-        >
-          <Button
-            class="btn-ghost"
-            aria-label="Search"
-            htmlFor="searchbar"
-            tabIndex={-1}
-          >
-            <Icon
-              class="text-base-300"
-              id="MagnifyingGlass"
-              size={20}
-              strokeWidth={0.01}
-            />
-          </Button>
-          <input
-            ref={searchInputRef}
-            id="search-input"
-            class="flex-grow outline-none placeholder-shown:sibling:hidden"
-            name={name}
-            defaultValue={query}
-            onInput={(e) => {
-              const value = e.currentTarget.value;
-
-              if (value) {
-                sendEvent({
-                  name: "search",
-                  params: { search_term: value },
-                });
-              }
-
-              setSearch(value);
-            }}
-            placeholder={placeholder}
-            role="combobox"
-            aria-controls="search-suggestion"
-            autocomplete="off"
-          />
-          <button
-            type="button"
-            aria-label="Clean search"
-            class="focus:outline-none"
-            tabIndex={-1}
-            onClick={(e) => {
-              e.stopPropagation();
-              if (searchInputRef.current === null) return;
-
-              searchInputRef.current.value = "";
-              setSearch("");
-            }}
-          >
-            <span class="text-sm">limpar</span>
-          </button>
-        </form>
-        {variant === "desktop" && <CloseButton />}
-      </div>
+      {
+        !hideField && (
+          <div class="flex items-center gap-4">
+            <form
+              id="searchbar"
+              action={action}
+              class="flex-grow flex gap-3 px-3 py-2 border border-base-200 text-base-content"
+            >
+              <Button
+                class="btn-ghost"
+                aria-label="Search"
+                htmlFor="searchbar"
+                tabIndex={-1}
+              >
+                <Icon
+                  class="text-base-300"
+                  id="MagnifyingGlass"
+                  size={20}
+                  strokeWidth={0.01}
+                />
+              </Button>
+              <input
+                ref={searchInputRef}
+                id="search-input"
+                class="flex-grow outline-none placeholder-shown:sibling:hidden"
+                name={name}
+                defaultValue={query}
+                onInput={(e) => {
+                  const value = e.currentTarget.value;
+    
+                  if (value) {
+                    sendEvent({
+                      name: "search",
+                      params: { search_term: value },
+                    });
+                  }
+    
+                  setSearch(value);
+                }}
+                placeholder={placeholder}
+                role="combobox"
+                aria-controls="search-suggestion"
+                autocomplete="off"
+              />
+              <button
+                type="button"
+                aria-label="Clean search"
+                class="focus:outline-none"
+                tabIndex={-1}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (searchInputRef.current === null) return;
+    
+                  searchInputRef.current.value = "";
+                  setSearch("");
+                }}
+              >
+                <span class="text-sm">limpar</span>
+              </button>
+            </form>
+            {variant === "desktop" && <CloseButton />}
+          </div>
+        )
+      }
       <div class="flex flex-col gap-6 divide-y divide-base-200 mt-6 empty:mt-0 md:flex-row md:divide-y-0">
         {notFound
           ? (

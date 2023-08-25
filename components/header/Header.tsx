@@ -4,16 +4,14 @@ import type { EditableProps as SearchbarProps } from "$store/components/search/S
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 
-import { layoutClasses, Colors, colorClasses, TextColors, textColorClasses, ButtonType } from "$store/components/ui/Types.tsx"
+import { Colors, TextColors } from "$store/components/ui/Types.tsx"
 
 import { Alert, Alerts } from "./Alerts.tsx";
-import Navbar, { Width as NavBarWidth, AdditionalProps as NavBarOptions, Style as navBarStyle, Variations } from "./Navbar.tsx";
+import Navbar, { AdditionalProps as NavBarOptions, Layout as NavBarLayout, Style as navBarStyle } from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 
 export interface Layout {
   alertWidth?: "Full" | "Full bleed";
-  navBarWidth?: NavBarWidth;
-  navBarVariation?: Variations;
 }
 
 export interface Style {
@@ -69,7 +67,7 @@ export interface Props {
   navBar?: NavItems & NavBarOptions;
   /** @title Search */
   searchbar?: SearchbarProps & Search;
-  layout?: Layout;
+  layout?: Layout & NavBarLayout;
   style?: Style;
 }
 

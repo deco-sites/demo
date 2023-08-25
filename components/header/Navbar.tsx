@@ -1,5 +1,6 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Searchbar from "$store/islands/HeaderSearchbar.tsx";
+import SearchField from "$store/islands/HeaderSearchField.tsx";
 import Buttons from "$store/islands/HeaderButton.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
@@ -59,6 +60,12 @@ export interface Style {
   textColor?: TextColors;
 }
 
+export interface Layout {
+  navBarWidth?: Width;
+  navBarVariation?: Variations;
+  searchVariation?: "Icon" | "Field";
+}
+
 export interface Props {
   logo?: {
       src: string;
@@ -67,10 +74,7 @@ export interface Props {
   items: INavItem[];
   searchbar: SearchbarProps;
   style?: Style;
-  layout?: {
-    navBarWidth?: Width;
-    navBarVariation?: Variations;
-  }
+  layout?: Layout;
 }
 
 export default function Navbar({
@@ -137,8 +141,14 @@ export default function Navbar({
   const _icons_class = "btn btn-circle btn-sm btn-ghost";
   const _icons = (
     <div class="flex-none flex items-center justify-end gap-2">
-      <Buttons variant="search" />
-      <Searchbar searchbar={searchbar} />
+      {
+        (!layout?.searchVariation || layout?.searchVariation == "Icon") && (
+          <>
+            <Buttons variant="search" />
+            <Searchbar searchbar={searchbar} />
+          </>
+        )
+      }
       <a class={_icons_class} href="/login" aria-label="Log in">
         <Icon id="User" size={20} />
       </a>
@@ -148,6 +158,19 @@ export default function Navbar({
       {_extraIcons}
       <Buttons variant="cart" />
     </div>
+  )
+
+  const _search_field = (
+    <>
+      {
+        layout?.searchVariation == "Field" && (
+          <>
+            <Searchbar searchbar={searchbar} hideField={true} />
+            <SearchField/>
+          </>
+        )
+      }
+    </>
   )
 
   const _region = <RegionSelector content={regionOptions} />;
@@ -211,7 +234,7 @@ export default function Navbar({
           )
         }
 
-        {
+{
           l === "Variation 3: One line" && (
             <div class={`${width} flex justify-between items-center gap-3`}>
               <div class="flex-auto flex items-center">
@@ -221,6 +244,40 @@ export default function Navbar({
               {_icons}
               {_region}
               {_buttons}
+            </div>
+          )
+        }
+
+        {
+          l === "Variation 4: One line" && (
+            <div class={`${width} flex justify-between items-center gap-3 min-h-12`}>
+              <div class="flex-auto flex items-center">
+                {_logo}
+              </div>
+              <div>
+                {_search_field}
+              </div>
+              {_icons}
+              {_region}
+              {_buttons}
+            </div>
+          )
+        }
+
+        {
+          l === "Variation 5: Two lines" && (
+            <div class={`${width} flex flex-col`}>
+              <div class="flex justify-between items-center gap-3 min-h-12">
+                <div class="flex-auto flex items-center">
+                  {_logo}
+                </div>
+                {_icons}
+                {_region}
+                {_buttons}
+              </div>
+              <div class="flex items-center gap-3">
+                {_navItems}
+              </div>
             </div>
           )
         }

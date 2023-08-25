@@ -10,9 +10,10 @@ const LazySearchbar = lazy(() =>
 
 interface Props {
   searchbar: SearchbarProps;
+  hideField?: boolean;
 }
 
-function Searchbar({ searchbar }: Props) {
+function Searchbar({ searchbar, hideField = false }: Props) {
   const { displaySearchbar } = useUI();
   const open = displaySearchbar.value &&
     window?.matchMedia?.("(min-width: 768px)")?.matches;
@@ -26,7 +27,7 @@ function Searchbar({ searchbar }: Props) {
     >
       {open && (
         <Suspense fallback={<span class="loading loading-ring" />}>
-          <LazySearchbar {...searchbar} variant="desktop" />
+          <LazySearchbar {...searchbar} hideField={hideField || false} variant="desktop" />
         </Suspense>
       )}
     </div>
