@@ -16,6 +16,7 @@ function GlobalTags() {
       <script
         defer
         data-domain="demo.deco.site"
+        data-api="https://plausible.io/api/event"
         src={asset("/plausible_script.js")}
       />
     </Head>
