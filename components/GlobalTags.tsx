@@ -11,6 +11,13 @@ function GlobalTags() {
 
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
+
+      {/* Plausible Analytics */}
+      <script
+        defer
+        data-domain="demo.deco.site"
+        src={asset("/plausible_script.js")}
+      />
     </Head>
   );
 }
