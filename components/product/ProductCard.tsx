@@ -269,13 +269,14 @@ function ProductCard(
               {l?.hide?.productName
                 ? ""
                 : (
-                  <h2 class="truncate text-base lg:text-lg text-base-content">
+
+                  <h2 class="truncate lg:text-lg">
                     {parentName} - {name}
                   </h2>
                 )}
               {l?.hide?.productDescription ? "" : (
                 <p
-                  class="truncate text-sm lg:text-sm text-neutral"
+                  class="truncate text-sm lg:text-sm"
                   dangerouslySetInnerHTML={{
                     __html: product.description
                       ? product.description.replace(/<[^>]+>/g, "")
@@ -296,7 +297,7 @@ function ProductCard(
               } ${align === "center" ? "justify-center" : "justify-start"}`}
             >
               <div
-                class={`line-through text-base-content opacity-50 text-xs ${
+                class={`line-through opacity-50 text-xs ${
                   l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
                 }`}
               >
@@ -309,7 +310,7 @@ function ProductCard(
             {l?.hide?.installments
               ? ""
               : (
-                <div class="text-base-content opacity-50 text-sm lg:text-base">
+                <div class="opacity-50 text-sm lg:text-base">
                   ou {installments}
                 </div>
               )}
