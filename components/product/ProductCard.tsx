@@ -294,7 +294,7 @@ function ProductCard(
               } ${align === "center" ? "justify-center" : "justify-start"}`}
             >
               <div
-                class={`line-through text-base-300 text-xs ${
+                class={`line-through text-base-content opacity-50 text-xs ${
                   l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
                 }`}
               >
@@ -307,7 +307,7 @@ function ProductCard(
             {l?.hide?.installments
               ? ""
               : (
-                <div class="text-base-300 text-sm lg:text-base">
+                <div class="text-base-content opacity-50 text-sm lg:text-base">
                   ou {installments}
                 </div>
               )}
