@@ -83,12 +83,14 @@ function ProductCard(
     offers,
     isVariantOf,
   } = product;
+  console.log(product);
   const id = `product-card-${productID}`;
   const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
   const { listPrice, price, installments } = useOffer(offers);
   const possibilities = useVariantPossibilities(product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
+  const parentName = isVariantOf?.name;
 
   const l = layout;
   const b = l?.backgroundAndBorder;
@@ -267,8 +269,9 @@ function ProductCard(
               {l?.hide?.productName
                 ? ""
                 : (
+
                   <h2 class="truncate lg:text-lg">
-                    {name}
+                    {parentName} - {name}
                   </h2>
                 )}
               {l?.hide?.productDescription ? "" : (
