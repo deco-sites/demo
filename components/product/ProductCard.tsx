@@ -266,14 +266,11 @@ function ProductCard(
           ? ""
           : (
             <div class="flex flex-col gap-0">
-              {l?.hide?.productName
-                ? ""
-                : (
-
-                  <h2 class="truncate lg:text-lg">
-                    {parentName} - {name}
-                  </h2>
-                )}
+              {l?.hide?.productName ? "" : (
+                <h2 class="truncate lg:text-lg">
+                  {parentName} - {name}
+                </h2>
+              )}
               {l?.hide?.productDescription ? "" : (
                 <p
                   class="truncate text-sm lg:text-sm"
