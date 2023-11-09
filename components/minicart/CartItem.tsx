@@ -1,8 +1,8 @@
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
-import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+import { useCart } from "apps/vtex/hooks/useCart.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useSignal } from "@preact/signals";

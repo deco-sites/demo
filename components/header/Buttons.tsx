@@ -2,8 +2,8 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
-import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
-import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+import { useCart } from "apps/vtex/hooks/useCart.ts";
+import { AnalyticsEvent } from "apps/commerce/types.ts";
 
 function SearchButton() {
   const { displaySearchbar } = useUI();

@@ -1,5 +1,5 @@
 import Icon from "$store/components/ui/Icon.tsx";
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";

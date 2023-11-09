@@ -3,13 +3,14 @@
 /// <reference lib="deno.ns" />
 /// <reference lib="esnext" />
 
-import { start } from "$fresh/server.ts";
 import plugins from "deco-sites/std/plugins/mod.ts";
 import partytownPlugin from "partytown/mod.ts";
-import manifest from "./fresh.gen.ts";
+
 import decoManifest from "./manifest.gen.ts";
 
-await start(manifest, {
+import { defineConfig } from "$fresh/server.ts";
+export default defineConfig({
+  build: { target: ["chrome99", "firefox99", "safari12"] },
   plugins: [
     ...plugins(
       {

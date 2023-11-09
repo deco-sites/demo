@@ -1,12 +1,12 @@
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
 import WishlistIcon from "$store/islands/WishlistButton.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
-import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
+import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { SendEventOnClick } from "$store/sdk/analytics.tsx";
-import type { Product } from "deco-sites/std/commerce/types.ts";
+import type { Product } from "apps/commerce/types.ts";
 import { ButtonType, getButtonClasses } from "$store/components/ui/Types.tsx";
 import {
   borderColorClasses2,

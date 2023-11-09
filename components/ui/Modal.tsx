@@ -1,6 +1,6 @@
 import Button from "$store/components/ui/Button.tsx";
 import { useEffect, useRef } from "preact/hooks";
-import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+import { useCart } from "apps/vtex/hooks/useCart.ts";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";

@@ -3,7 +3,7 @@ import Buttons from "$store/islands/HeaderButton.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import type { INavItem } from "./NavItem.tsx";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 
