@@ -83,7 +83,6 @@ function ProductCard(
     offers,
     isVariantOf,
   } = product;
-  console.log(product);
   const id = `product-card-${productID}`;
   const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
